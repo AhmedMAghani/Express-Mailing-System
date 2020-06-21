@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<af:pageTemplateDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" definition="private"
+                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component">
+    <af:xmlContent>
+        <afc:component>
+            <afc:description/>
+            <afc:display-name>HomeTemplate</afc:display-name>
+            <afc:facet>
+                <afc:description>Sign in form</afc:description>
+                <afc:facet-name>signIn</afc:facet-name>
+            </afc:facet>
+        </afc:component>
+    </af:xmlContent>
+    <af:group id="pt_g1">
+        <af:panelGridLayout id="pt_pgl1">
+      <af:gridRow height="100%" id="pt_gr1">
+        <af:gridCell width="70%" id="pt_gc1" halign="stretch" valign="stretch">
+          <af:image id="pt_i1" source="#{resource['images:signInBackGround.jpg']}">
+                        <?audit suppress oracle.adf.faces.imgshortdesc?>
+                    </af:image>
+        </af:gridCell>
+        <af:gridCell width="30%" id="pt_gc2" inlineStyle="background-color:white;" halign="stretch" valign="stretch">
+          <af:panelGroupLayout id="pt_pgl2" layout="vertical" halign="center" valign="middle">
+            <af:facetRef facetName="signIn"/>
+          </af:panelGroupLayout>
+        </af:gridCell>
+      </af:gridRow>
+    </af:panelGridLayout>
+    </af:group>
+</af:pageTemplateDef>

@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<af:pageTemplateDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" definition="private"
+                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component">
+    <af:xmlContent>
+        <afc:component>
+            <afc:description/>
+            <afc:display-name>AppTemplate</afc:display-name>
+            <afc:facet>
+                <afc:description>Pages List Area</afc:description>
+                <afc:facet-name>Pages</afc:facet-name>
+            </afc:facet>
+            <afc:facet>
+                <afc:description>Content Area</afc:description>
+                <afc:facet-name>Content</afc:facet-name>
+            </afc:facet>
+            <afc:facet>
+                <afc:description>Header Area</afc:description>
+                <afc:facet-name>Header</afc:facet-name>
+            </afc:facet>
+        </afc:component>
+    </af:xmlContent>
+    <af:group id="pt_g1">
+        <af:panelGridLayout id="pt_pgl1">
+        <af:gridRow height="10%" id="pt_gr1">
+            <af:gridCell width="20%" id="pt_gc1" halign="stretch" valign="stretch"
+                         inlineStyle="background-color:#e7e7e7;">
+                <af:panelGroupLayout id="pt_pgl2" halign="center" valign="middle" layout="vertical"
+                                     inlineStyle="line-height:80px; color:#0000a5; font-family:fantasy; font-size:xx-large; text-align:center;">
+                    <af:outputFormatted value="Express Service" id="pt_of1"/>
+                </af:panelGroupLayout>
+            </af:gridCell>
+            <af:gridCell width="80%" id="pt_gc2" halign="stretch" valign="stretch"
+                         inlineStyle="background-color:white;">
+                <af:panelGroupLayout id="pt_pgl3">
+                        <af:facetRef facetName="Header"/>
+                    </af:panelGroupLayout>
+            </af:gridCell>
+        </af:gridRow>
+        <af:gridRow height="100%" id="pt_gr2">
+            <af:gridCell width="20%" id="pt_gc3" halign="stretch" valign="stretch"
+                         inlineStyle="background-color:#e7e7e7;">
+                <af:panelGroupLayout id="pt_pgl4">
+                        <af:facetRef facetName="Pages"/>
+                    </af:panelGroupLayout>
+            </af:gridCell>
+            <af:gridCell width="80%" id="pt_gc4" halign="stretch" valign="stretch"
+                         inlineStyle="background-color:white;">
+                <af:panelGroupLayout id="pt_pgl5">
+                    <af:facetRef facetName="Content"/>
+                </af:panelGroupLayout>
+            </af:gridCell>
+        </af:gridRow>
+    </af:panelGridLayout>
+    </af:group>
+</af:pageTemplateDef>
