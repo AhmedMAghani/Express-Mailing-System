@@ -13,17 +13,27 @@
     </af:xmlContent>
     <af:group id="pt_g1">
         <af:panelGridLayout id="pt_pgl1">
-      <af:gridRow height="100%" id="pt_gr1">
-        <af:gridCell width="70%" id="pt_gc1" halign="stretch" valign="stretch">
+      <af:gridRow height="25%" id="pt_gr1">
+        <af:gridCell width="70%" rowSpan="3" id="pt_gc1" halign="stretch" valign="stretch">
           <af:image id="pt_i1" source="#{resource['images:signInBackGround.jpg']}">
                         <?audit suppress oracle.adf.faces.imgshortdesc?>
                     </af:image>
         </af:gridCell>
         <af:gridCell width="30%" id="pt_gc2" inlineStyle="background-color:white;" halign="stretch" valign="stretch">
-          <af:panelGroupLayout id="pt_pgl2" layout="vertical" halign="center" valign="middle">
-            <af:facetRef facetName="signIn"/>
-          </af:panelGroupLayout>
-        </af:gridCell>
+                    <af:panelGroupLayout id="pt_pgl3"/>
+                </af:gridCell>
+      </af:gridRow>
+      <af:gridRow height="50%" id="pt_gr3">
+            <af:gridCell width="30%" id="pt_gc5" inlineStyle="background-color:white;" halign="stretch" valign="stretch">
+                    <af:panelGroupLayout id="pt_pgl2" layout="vertical" halign="center" valign="middle" rendered="true">
+                        <af:facetRef facetName="signIn"/>
+                    </af:panelGroupLayout>
+                </af:gridCell>
+      </af:gridRow>
+      <af:gridRow height="25%" id="pt_gr4">
+            <af:gridCell width="30%" id="pt_gc6" inlineStyle="background-color:white;" halign="stretch" valign="stretch">
+                    <af:panelGroupLayout id="pt_pgl4"/>
+                </af:gridCell>
       </af:gridRow>
     </af:panelGridLayout>
     </af:group>

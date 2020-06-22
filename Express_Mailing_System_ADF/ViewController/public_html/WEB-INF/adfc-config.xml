@@ -1,2 +1,46 @@
 <?xml version="1.0" encoding="windows-1252" ?>
-<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2"></adfc-config>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="SignIn">
+    <page>/Pages/SignIn.jsf</page>
+  </view>
+  <router id="MainRouter"></router>
+  <task-flow-call id="AppTFCall">
+    <task-flow-reference>
+      <document>/WEB-INF/AppTFCall.xml</document>
+      <id>AppTFCall</id>
+    </task-flow-reference>
+  </task-flow-call>
+  <view id="SignUp">
+    <page>/Pages/SignUp.jsf</page>
+  </view>
+  <control-flow-rule id="__1">
+    <from-activity-id>SignIn</from-activity-id>
+    <control-flow-case id="__2">
+      <from-outcome>toMainRouter</from-outcome>
+      <to-activity-id>MainRouter</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__3">
+    <from-activity-id>MainRouter</from-activity-id>
+    <control-flow-case id="__4">
+      <from-outcome>toSignUp</from-outcome>
+      <to-activity-id>SignUp</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__5">
+      <from-outcome>toAppTFCall</from-outcome>
+      <to-activity-id>AppTFCall</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__6">
+    <managed-bean-name>backing_Pages_SignIn</managed-bean-name>
+    <managed-bean-class>view.backing.Pages.SignIn</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1Pages/SignIn.jsf-->
+  </managed-bean>
+  <managed-bean id="__7">
+    <managed-bean-name>backing_SignUp</managed-bean-name>
+    <managed-bean-class>view.backing.SignUp</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1Pages/SignUp.jsf-->
+  </managed-bean>
+</adfc-config>
