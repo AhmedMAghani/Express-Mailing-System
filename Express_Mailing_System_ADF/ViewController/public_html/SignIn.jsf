@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="SignIn.jsf" id="d1" binding="#{backingBeanScope.backing_SignIn.d1}">
+        <af:messages id="m1" binding="#{backingBeanScope.backing_SignIn.m1}"/>
+        <af:form id="f1" binding="#{backingBeanScope.backing_SignIn.f1}">
+            <af:pageTemplate viewId="/PageTemplates/HomeTemplate.jsf" id="pt1"
+                             binding="#{backingBeanScope.backing_SignIn.pt1}">
+                <f:facet name="signIn">
+                    <af:outputFormatted value="Sign In" id="of1"
+                                        binding="#{backingBeanScope.backing_SignIn.of1}"
+                                        inlineStyle="font-size:40px; font-family:fantasy; color:#FF9C31;"/>
+                    <af:spacer width="10" height="40" id="s1" binding="#{backingBeanScope.backing_SignIn.s1}"/>
+                    <af:inputText id="it1" binding="#{backingBeanScope.backing_SignIn.it1}" placeholder="Username" styleClass="AFStretchWidth"
+                                  showRequired="false" required="true"/>
+                    <af:spacer width="10" height="20" id="s2" binding="#{backingBeanScope.backing_SignIn.s2}"/>
+                    <af:inputText id="it2" binding="#{backingBeanScope.backing_SignIn.it2}"
+                                  placeholder="Password" styleClass="AFStretchWidth" secret="true"
+                                  showRequired="false" required="true"/>
+                    <af:spacer width="10" height="40" id="s3" binding="#{backingBeanScope.backing_SignIn.s3}"/>
+                    <af:panelGroupLayout id="pgl1" binding="#{backingBeanScope.backing_SignIn.pgl1}">
+                        <af:button text="Sign In" id="b1" binding="#{backingBeanScope.backing_SignIn.b1}"
+                                   inlineStyle="font-size:medium;"
+                                   actionListener="#{backingBeanScope.backing_SignIn.signIn}"/>
+                        <af:spacer width="10" height="20" id="s4" binding="#{backingBeanScope.backing_SignIn.s4}"/>
+                        <af:button text="Sign Up" id="b2" binding="#{backingBeanScope.backing_SignIn.b2}"
+                                   action="toSignUp" selected="true" inlineStyle="font-size:large;" immediate="true"/>
+                    </af:panelGroupLayout>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_SignIn-->
+</f:view>

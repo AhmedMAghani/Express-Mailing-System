@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="OrdersCompanyFk1_VL"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.BusinessComponents.AssociationLinks.OrdersCompanyFk1_AL">
+  <ViewLinkDefEnd
+    Name="Companies"
+    Cardinality="1"
+    Source="true"
+    Owner="model.BusinessComponents.ViewObjects.Companies_VO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="Companies"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.BusinessComponents.ViewObjects.Companies_VO.CompanyId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="Orders"
+    Cardinality="-1"
+    Owner="model.BusinessComponents.ViewObjects.Orders_VO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="Orders"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.BusinessComponents.ViewObjects.Orders_VO.ComapnyId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

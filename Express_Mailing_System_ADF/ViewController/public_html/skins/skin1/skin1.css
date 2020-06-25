@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+/**ADFFaces_Skin_File / DO NOT REMOVE**/
+@namespace af "http://xmlns.oracle.com/adf/faces/rich";
+@namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
+
+af|button {
+    text-decoration: none solid currentColor;
+    font-size: 16px;
+    font-family: Arial;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-right: 30px;
+    padding-left: 30px;
+    border: 1px solid #c4ced7; 
+    border-radius: 4px; 
+}
+
+af|button:depressed {
+    }
+
+.AFButtonActiveColor:alias {
+    color: #ff9c31; 
+    }
+
+.AFButtonBorderActiveColor:alias {
+    color: #FF9C31; 
+}
+
+/*INFO: Color value exceeded range after adjustment: HSL(31, 128%, 89%)*/
+.AFButtonHoverSecondaryColor:alias {
+    color: #FFE6CA; 
+}
+
+.AFButtonTextHoverColor:alias {
+    color: #FF9E36; 
+}
+
+.AFIconActiveColor:alias {
+    color: #FF9C31; 
+}
+
+/*INFO: Color value exceeded range after adjustment: HSL(31, 128%, 89%)*/
+.AFIconHoverColor:alias {
+    color: #FFE6CA; 
+}
+
+.AFActiveDataColor:alias {
+    color: #ffefd6; 
+}
+
+.AFMediumBorderRadius:alias {
+    border-radius: 4px; 
+}
+
+af|inputText::content {
+    padding-top:20px; 
+    padding-bottom:20px; 
+    text-align: center; 
+    font-size: larger; 
+}
+
+.AFFormControlContentBorderColor:alias {
+    color: #ff9c31; 
+}
+
+@agent (touchScreen:none) {
+
+    af|inputText:click-to-edit:hover-target::content {
+        border-color: Black; 
+    }
+
+}

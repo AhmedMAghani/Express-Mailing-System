@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CompanyBranchesAccountsFk2_VL"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.BusinessComponents.AssociationLinks.CompanyBranchesAccountsFk2_AL">
+  <ViewLinkDefEnd
+    Name="BranchUserAccounts"
+    Cardinality="1"
+    Source="true"
+    Owner="model.BusinessComponents.ViewObjects.BranchUserAccounts_VO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="BranchUserAccounts"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.BusinessComponents.ViewObjects.BranchUserAccounts_VO.AccountId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="CompanyBranches"
+    Cardinality="1"
+    Owner="model.BusinessComponents.ViewObjects.CompanyBranches_VO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="CompanyBranches"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.BusinessComponents.ViewObjects.CompanyBranches_VO.AccountId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

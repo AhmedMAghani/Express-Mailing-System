@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Home.jsf" id="d1" binding="#{backingBeanScope.backing_Home1.d1}">
+        <af:form id="f1" binding="#{backingBeanScope.backing_Home1.f1}">
+            <af:pageTemplate viewId="/PageTemplates/AppTemplate.jsf" id="pt1"
+                             binding="#{backingBeanScope.backing_Home1.pt1}">
+                <f:facet name="Pages"/>
+                <f:facet name="Content"/>
+                <f:facet name="Header"/>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_Home1-->
+</f:view>

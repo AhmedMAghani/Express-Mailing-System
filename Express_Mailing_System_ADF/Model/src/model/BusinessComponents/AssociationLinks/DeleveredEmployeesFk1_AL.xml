@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DeleveredEmployeesFk1_AL"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Employees"
+    Cardinality="1"
+    Source="true"
+    Owner="model.BusinessComponents.EntityObjects.Employees_EO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Employees"/>
+      <Attr Name="_foreignKey" Value="model.BusinessComponents.EntityObjects.Employees_EO.EmployeesPk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.BusinessComponents.EntityObjects.Employees_EO.EmployeeId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Delevered"
+    Cardinality="-1"
+    Owner="model.BusinessComponents.EntityObjects.Delevered_EO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Delevered"/>
+      <Attr Name="_foreignKey" Value="model.BusinessComponents.EntityObjects.Delevered_EO.DeleveredEmployeesFk1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.BusinessComponents.EntityObjects.Delevered_EO.EmployeeId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Representatives_EO"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="REPRESENTATIVES"
+  AliasName="Representatives_EO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="RepId"
+    IsNotNull="true"
+    ColumnName="REP_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="REPRESENTATIVES"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="RepName"
+    Precision="60"
+    ColumnName="REP_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="REPRESENTATIVES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RepPhone"
+    Precision="60"
+    ColumnName="REP_PHONE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="REPRESENTATIVES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RepEmail"
+    Precision="60"
+    ColumnName="REP_EMAIL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="REPRESENTATIVES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CompanyId"
+    ColumnName="COMPANY_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="REPRESENTATIVES"/>
+  <Attribute
+    Name="BranchId"
+    ColumnName="BRANCH_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="REPRESENTATIVES"/>
+  <AccessorAttribute
+    Name="Contracts"
+    Association="model.BusinessComponents.AssociationLinks.ContracsRepFk1_AL"
+    AssociationEnd="model.BusinessComponents.AssociationLinks.ContracsRepFk1_AL.Contracts"
+    AssociationOtherEnd="model.BusinessComponents.AssociationLinks.ContracsRepFk1_AL.Representatives"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Companies"
+    Association="model.BusinessComponents.AssociationLinks.RepresentativesFk1_AL"
+    AssociationEnd="model.BusinessComponents.AssociationLinks.RepresentativesFk1_AL.Companies"
+    AssociationOtherEnd="model.BusinessComponents.AssociationLinks.RepresentativesFk1_AL.Representatives"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="CompanyBranches"
+    Association="model.BusinessComponents.AssociationLinks.RepresentativesFk2_AL"
+    AssociationEnd="model.BusinessComponents.AssociationLinks.RepresentativesFk2_AL.CompanyBranches"
+    AssociationOtherEnd="model.BusinessComponents.AssociationLinks.RepresentativesFk2_AL.Representatives"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="RepresentativesPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="REPRESENTATIVES_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.BusinessComponents.EntityObjects.Representatives_EO.RepId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="RepresentativesFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="COMPANIES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="REPRESENTATIVES_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.BusinessComponents.EntityObjects.Representatives_EO.CompanyId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="RepresentativesFk2">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="COMPANY_BRANCHES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="REPRESENTATIVES_FK2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.BusinessComponents.EntityObjects.Representatives_EO.BranchId"/>
+    </AttrArray>
+  </Key>
+</Entity>

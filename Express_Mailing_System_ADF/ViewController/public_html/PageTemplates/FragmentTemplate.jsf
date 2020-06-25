@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<af:pageTemplateDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" definition="private"
+                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component">
+    <af:xmlContent>
+        <afc:component>
+            <afc:description/>
+            <afc:display-name>FragmentTemplate</afc:display-name>
+            <afc:facet>
+                <afc:facet-name>NavBar</afc:facet-name>
+            </afc:facet>
+            <afc:facet>
+                <afc:facet-name>Content</afc:facet-name>
+            </afc:facet>
+        </afc:component>
+    </af:xmlContent>
+    <af:group id="pt_g1">
+        <af:panelGridLayout id="pt_pgl1">
+            <af:gridRow marginTop="0px" height="10%" id="pt_gr1">
+                <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="pt_gc1" halign="stretch"
+                             valign="stretch" inlineStyle="background-color:white;">
+                    <af:panelGroupLayout id="pt_pgl2">
+                        <af:facetRef facetName="NavBar"/>
+                    </af:panelGroupLayout>
+                </af:gridCell>
+            </af:gridRow>
+            <af:gridRow marginTop="0px" height="90%" marginBottom="0px" id="pt_gr2">
+                <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="pt_gc2" halign="stretch"
+                             valign="stretch">
+                    <af:facetRef facetName="Content"/>
+                </af:gridCell>
+            </af:gridRow>
+        </af:panelGridLayout>
+    </af:group>
+</af:pageTemplateDef>

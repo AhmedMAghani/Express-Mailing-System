@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="MainTF">
+    <?audit suppress oracle.adfdt.controller.adfc.source.audit.TaskFlowReturnActivitiesNotDefined?>
+    <default-activity>SignIn</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__6">
+      <managed-bean-name>backing_SignIn</managed-bean-name>
+      <managed-bean-class>view.backing.SignIn</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+      <!--oracle-jdev-comment:managed-bean-jsp-link:1SignIn.jsf-->
+    </managed-bean>
+    <managed-bean id="__7">
+      <managed-bean-name>backing_SignUp1</managed-bean-name>
+      <managed-bean-class>view.backing.SignUp</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+      <!--oracle-jdev-comment:managed-bean-jsp-link:1SignUp.jsf-->
+    </managed-bean>
+    <view id="SignIn">
+      <page>/SignIn.jsf</page>
+    </view>
+    <task-flow-call id="AppTFCall">
+      <task-flow-reference>
+        <document>/WEB-INF/AppTFCall.xml</document>
+        <id>AppTFCall</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <view id="SignUp">
+      <page>/SignUp.jsf</page>
+    </view>
+    <control-flow-rule id="__1">
+      <from-activity-id>SignIn</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>toSignUp</from-outcome>
+        <to-activity-id>SignUp</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>toAppTFCall</from-outcome>
+        <to-activity-id>AppTFCall</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__4">
+      <from-activity-id>SignUp</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome>toSignIn</from-outcome>
+        <to-activity-id>SignIn</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__8">
+        <from-outcome>toAppTFCall2</from-outcome>
+        <to-activity-id>AppTFCall</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

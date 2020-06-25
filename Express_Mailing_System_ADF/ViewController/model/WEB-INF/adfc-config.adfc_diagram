@@ -1,95 +1,27 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <SDM>
    <OverallProperties
-      id="OverallProperties1"/>
-   <View
-      id="View2">
+      id="OverallProperties1">
       <property
-         name="activityId">SignIn</property>
+         name="x">88.01758</property>
       <property
-         name="x">312.0</property>
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>SignIn&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
-      <property
-         name="y">300.59766</property>
-      <property
-         name="page">/Pages/SignIn.jsf</property>
-      <property
-         name="exceptionHandler">false</property>
-   </View>
-   <Router
-      id="Router3">
-      <property
-         name="activityId">MainRouter</property>
-      <property
-         name="x">541.0</property>
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>MainRouter&lt;/b>&lt;/p>&lt;p>Activity Type:  Router&lt;/p></property>
-      <property
-         name="y">299.1953</property>
-      <property
-         name="exceptionHandler">false</property>
-   </Router>
+         name="y">337.55176</property>
+   </OverallProperties>
    <TaskFlowCall
-      id="TaskFlowCall4">
+      id="TaskFlowCall7">
       <property
-         name="description">&lt;html>&lt;p>&lt;b>AppTFCall&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>MainTF&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
       <property
-         name="activityId">AppTFCall</property>
+         name="activityId">MainTF</property>
       <property
-         name="x">702.0</property>
+         name="x">86.0</property>
       <property
-         name="y">147.19531</property>
+         name="y">124.896484</property>
       <property
-         name="documentReference">/WEB-INF/AppTFCall.xml</property>
+         name="documentReference">/WEB-INF/MainTF.xml</property>
       <property
          name="exceptionHandler">false</property>
       <property
-         name="taskFlowId">AppTFCall</property>
+         name="taskFlowId">MainTF</property>
    </TaskFlowCall>
-   <View
-      id="View5">
-      <property
-         name="activityId">SignUp</property>
-      <property
-         name="x">710.0</property>
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>SignUp&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
-      <property
-         name="y">464.59766</property>
-      <property
-         name="page">/Pages/SignUp.jsf</property>
-      <property
-         name="exceptionHandler">false</property>
-   </View>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase6"
-      from="View2"
-      to="Router3">
-      <property
-         name="fromOutcome">toMainRouter</property>
-      <property
-         name="sdm:polyPoints">R50,353.0,300.24707,500.0,298.84473,L50</property>
-   </ControlFlowCase>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase7"
-      from="Router3"
-      to="View5">
-      <property
-         name="fromOutcome">toSignUp</property>
-      <property
-         name="sdm:polyPoints">B50,541.0,352.84473,669.0,464.24707,L50</property>
-   </ControlFlowCase>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase8"
-      from="Router3"
-      to="TaskFlowCall4">
-      <property
-         name="fromOutcome">toAppTFCall</property>
-      <property
-         name="sdm:polyPoints">T50,541.0,244.84473,661.0,146.84473,L50</property>
-   </ControlFlowCase>
 </SDM>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AwbAddressesZonesFk1_VL"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.BusinessComponents.AssociationLinks.AwbAddressesZonesFk1_AL">
+  <ViewLinkDefEnd
+    Name="Zones"
+    Cardinality="1"
+    Source="true"
+    Owner="model.BusinessComponents.ViewObjects.Zones_VO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="Zones"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.BusinessComponents.ViewObjects.Zones_VO.ZoneId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="AwbAddresses"
+    Cardinality="-1"
+    Owner="model.BusinessComponents.ViewObjects.AwbAddresses_VO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="AwbAddresses"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.BusinessComponents.ViewObjects.AwbAddresses_VO.DestinationState"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

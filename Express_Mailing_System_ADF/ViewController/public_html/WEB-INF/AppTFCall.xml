@@ -5,16 +5,50 @@
     <data-control-scope>
       <shared/>
     </data-control-scope>
-    <view id="Home"></view>
+    <managed-bean id="__7">
+      <managed-bean-name>backing_Home</managed-bean-name>
+      <managed-bean-class>view.backing.Home</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+      <!--oracle-jdev-comment:managed-bean-jsp-link:1Pages/Home.jsf-->
+    </managed-bean>
+    <managed-bean id="__8">
+      <managed-bean-name>backing_Home1</managed-bean-name>
+      <managed-bean-class>view.backing.Home</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+      <!--oracle-jdev-comment:managed-bean-jsp-link:1Home.jsf-->
+    </managed-bean>
+    <view id="Home">
+      <page>/Home.jsf</page>
+    </view>
     <task-flow-return id="returnToSignIn">
       <outcome>
         <name>returnToSignIn</name>
       </outcome>
     </task-flow-return>
-    <task-flow-call id="CompaiesTFCall"></task-flow-call>
-    <task-flow-call id="AdminstraitveTFCall"></task-flow-call>
-    <task-flow-call id="ContractTFCall"></task-flow-call>
-    <task-flow-call id="TrackingTFCall"></task-flow-call>
+    <task-flow-call id="CompaiesTFCall">
+      <task-flow-reference>
+        <document>/WEB-INF/CompaiesTFCall.xml</document>
+        <id>CompaiesTFCall</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-call id="AdminstraitveTFCall">
+      <task-flow-reference>
+        <document>/WEB-INF/AdminstraitveTFCall.xml</document>
+        <id>AdminstraitveTFCall</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-call id="ContractTFCall">
+      <task-flow-reference>
+        <document>/WEB-INF/ContractTFCall.xml</document>
+        <id>ContractTFCall</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-call id="TrackingTFCall">
+      <task-flow-reference>
+        <document>/WEB-INF/TrackingTFCall.xml</document>
+        <id>TrackingTFCall</id>
+      </task-flow-reference>
+    </task-flow-call>
     <control-flow-rule id="__1">
       <from-activity-id>Home</from-activity-id>
       <control-flow-case id="__2">

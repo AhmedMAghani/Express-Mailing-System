@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="OnDeleveryAwbFk1_VL"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.BusinessComponents.AssociationLinks.OnDeleveryAwbFk1_AL">
+  <ViewLinkDefEnd
+    Name="Awb1_1"
+    Cardinality="1"
+    Source="true"
+    Owner="model.BusinessComponents.ViewObjects.Awb_VO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="Awb1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.BusinessComponents.ViewObjects.Awb_VO.AwbNo"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="OnDelevery"
+    Cardinality="-1"
+    Owner="model.BusinessComponents.ViewObjects.OnDelevery_VO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="OnDelevery"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.BusinessComponents.ViewObjects.OnDelevery_VO.Awb"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

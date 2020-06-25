@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="SignUp.jsf" id="d1" binding="#{backingBeanScope.backing_SignUp1.d1}">
+        <af:form id="f1" binding="#{backingBeanScope.backing_SignUp1.f1}">
+            <af:pageTemplate viewId="/PageTemplates/HomeTemplate.jsf" id="pt1"
+                             binding="#{backingBeanScope.backing_SignUp1.pt1}">
+                <f:facet name="signIn">
+                    <af:outputFormatted value="Sign Up" id="of1" binding="#{backingBeanScope.backing_SignUp1.of1}"
+                                        inlineStyle="font-size:40px; font-family:fantasy; color:#FF9C31;"/>
+                    <af:spacer width="10" height="40" id="s1" binding="#{backingBeanScope.backing_SignUp1.s1}"/>
+                    <af:inputText id="it1" binding="#{backingBeanScope.backing_SignUp1.it1}" placeholder="Username"
+                                  styleClass="AFStretchWidth" showRequired="false" required="true"/>
+                    <af:spacer width="10" height="20" id="s2" binding="#{backingBeanScope.backing_SignUp1.s2}"/>
+                    <af:outputFormatted value="passord dosn't match, please re-enter passord" id="of3"
+                                        binding="#{backingBeanScope.backing_SignUp1.of3}" inlineStyle="color:red;"
+                                        visible="false" partialTriggers="b1"/>
+                    <af:inputText id="it2" binding="#{backingBeanScope.backing_SignUp1.it2}" placeholder="Password"
+                                  styleClass="AFStretchWidth" secret="true" showRequired="false" required="true"/>
+                    <af:spacer width="10" height="20" id="s5" binding="#{backingBeanScope.backing_SignUp1.s5}"/>
+                    <af:outputFormatted value="passord dosn't match, please re-enter passord" id="of2"
+                                        binding="#{backingBeanScope.backing_SignUp1.of2}" inlineStyle="color:red;"
+                                        visible="false" partialTriggers="b1"/>
+                    <af:inputText id="it3" binding="#{backingBeanScope.backing_SignUp1.it3}"
+                                  placeholder="Confirm Password"
+                                  styleClass="AFStretchWidth" secret="true" showRequired="false" required="true"/>
+                    <af:spacer width="10" height="20" id="s6" binding="#{backingBeanScope.backing_SignUp1.s6}"/>
+                    <af:panelGridLayout id="pgl2" binding="#{backingBeanScope.backing_SignUp1.pgl2}">
+                        <af:gridRow height="auto" id="gr1"
+                                    binding="#{backingBeanScope.backing_SignUp1.gr1}">
+                            <af:gridCell width="50%" id="gc1"
+                                         binding="#{backingBeanScope.backing_SignUp1.gc1}" halign="end"
+                                         valign="stretch">
+                                <af:button text="Company" id="b3" binding="#{backingBeanScope.backing_SignUp1.b3}"
+                                           type="radio" partialSubmit="false" immediate="false"
+                                           inlineStyle="padding:5px; border-bottom-left-radius:0px;"/>
+                            </af:gridCell>
+                            <af:gridCell width="50%" id="gc2"
+                                         binding="#{backingBeanScope.backing_SignUp1.gc2}" halign="start"
+                                         valign="stretch">
+                                <af:button text="Employee" id="b4" binding="#{backingBeanScope.backing_SignUp1.b4}"
+                                           type="radio" partialSubmit="false" immediate="false" selected="true"
+                                           inlineStyle="padding:5px; border-bottom-left-radius:0px;"/>
+                            </af:gridCell>
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                    <af:spacer width="10" height="40" id="s3" binding="#{backingBeanScope.backing_SignUp1.s3}"/>
+                    <af:panelGroupLayout id="pgl1" binding="#{backingBeanScope.backing_SignUp1.pgl1}">
+                        <af:button text="Sign Up" id="b1" binding="#{backingBeanScope.backing_SignUp1.b1}"
+                                   inlineStyle="font-size:medium;"
+                                   actionListener="#{backingBeanScope.backing_SignUp1.signUp}"/>
+                        <af:spacer width="10" height="20" id="s4" binding="#{backingBeanScope.backing_SignUp1.s4}"/>
+                        <af:button text="Sign In" id="b2" binding="#{backingBeanScope.backing_SignUp1.b2}"
+                                   action="toSignIn" selected="true" inlineStyle="font-size:large;" immediate="true"/>
+                    </af:panelGroupLayout>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_SignUp1-->
+</f:view>
