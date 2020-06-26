@@ -12,9 +12,6 @@ import oracle.adf.view.rich.component.rich.RichDocument;
 import oracle.adf.view.rich.component.rich.RichForm;
 import oracle.adf.view.rich.component.rich.fragment.RichPageTemplate;
 import oracle.adf.view.rich.component.rich.input.RichInputText;
-import oracle.adf.view.rich.component.rich.layout.RichGridCell;
-import oracle.adf.view.rich.component.rich.layout.RichGridRow;
-import oracle.adf.view.rich.component.rich.layout.RichPanelGridLayout;
 import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
 import oracle.adf.view.rich.component.rich.nav.RichButton;
 import oracle.adf.view.rich.component.rich.output.RichOutputFormatted;
@@ -22,7 +19,6 @@ import oracle.adf.view.rich.component.rich.output.RichSpacer;
 
 import oracle.jbo.JboException;
 
-import service.AccountType;
 import service.ModuleService;
 
 public class SignUp {
@@ -43,13 +39,6 @@ public class SignUp {
     private RichSpacer s5;
 
     private ModuleService moduleService;
-    private RichButton b3;
-    private RichSpacer s6;
-    private RichPanelGridLayout pgl2;
-    private RichGridRow gr1;
-    private RichGridCell gc1;
-    private RichGridCell gc2;
-    private RichButton b4;
     private RichOutputFormatted of2;
     private RichOutputFormatted of3;
 
@@ -178,15 +167,19 @@ public class SignUp {
     }
 
     public void signUp(ActionEvent actionEvent) {
-        AccountType type = getB3().isSelected() ? AccountType.COMPANY_BRANCH : AccountType.EMPLOYEE;
-        if (checkPass(getIt2().getValue().toString(), getIt3().getValue().toString()) == false){
+        if (checkPass(getIt2().getValue().toString(), getIt3().getValue().toString()) == false) {
             getOf2().setVisible(true);
             getOf3().setVisible(true);
-        } else if (moduleService.signUp(getIt1().getValue().toString(), getIt2().getValue().toString(), type)){
-            JSFUtils.storeOnSession("userName", getIt1().getValue());
-            ADFUtils.navigateTo("toAppTFCall2");
         } else {
-            ADFUtils.navigateTo("toSignIn");
+            Integer signUpID =
+                moduleService.signUp(getIt1().getValue().toString(), getIt2().getValue().toString()).intValue();
+            if (signUpID != 0) {
+                JSFUtils.storeOnSession("userName", getIt1().getValue());
+                JSFUtils.storeOnSession("signUpID", signUpID);
+                ADFUtils.navigateTo("toCompleteR");
+            } else {
+                ADFUtils.navigateTo("toSignIn");
+            }
         }
     }
 
@@ -194,63 +187,8 @@ public class SignUp {
         if (pass1.equals(pass2))
             return true;
         return false;
-    } 
-
-    public void setB3(RichButton b3) {
-        this.b3 = b3;
     }
 
-    public RichButton getB3() {
-        return b3;
-    }
-
-    public void setS6(RichSpacer s6) {
-        this.s6 = s6;
-    }
-
-    public RichSpacer getS6() {
-        return s6;
-    }
-
-    public void setPgl2(RichPanelGridLayout pgl2) {
-        this.pgl2 = pgl2;
-    }
-
-    public RichPanelGridLayout getPgl2() {
-        return pgl2;
-    }
-
-    public void setGr1(RichGridRow gr1) {
-        this.gr1 = gr1;
-    }
-
-    public RichGridRow getGr1() {
-        return gr1;
-    }
-
-    public void setGc1(RichGridCell gc1) {
-        this.gc1 = gc1;
-    }
-
-    public RichGridCell getGc1() {
-        return gc1;
-    }
-
-    public void setGc2(RichGridCell gc2) {
-        this.gc2 = gc2;
-    }
-
-    public RichGridCell getGc2() {
-        return gc2;
-    }
-
-    public void setB4(RichButton b4) {
-        this.b4 = b4;
-    }
-
-    public RichButton getB4() {
-        return b4;
-    }
 
     public void setOf2(RichOutputFormatted of2) {
         this.of2 = of2;

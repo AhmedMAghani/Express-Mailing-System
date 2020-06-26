@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="CompleteRegisterationPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Employees1" RangeSize="25" DataControl="Express_AMDataControl" id="Employees1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="Employees1Iterator" id="EmployeeName">
+      <AttrNames>
+        <Item Value="EmployeeName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Employees1Iterator" id="EmployeeEmail">
+      <AttrNames>
+        <Item Value="EmployeeEmail"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Employees1Iterator" id="EmpPhone1">
+      <AttrNames>
+        <Item Value="EmpPhone1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Employees1Iterator" id="EmpPhone2">
+      <AttrNames>
+        <Item Value="EmpPhone2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Employees1Iterator" id="EmpAddress1">
+      <AttrNames>
+        <Item Value="EmpAddress1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Employees1Iterator" id="EmpAddress2">
+      <AttrNames>
+        <Item Value="EmpAddress2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Employees1Iterator" id="AccountId">
+      <AttrNames>
+        <Item Value="AccountId"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="Express_AMDataControl"/>
+    <attributeValues IterBinding="Employees1Iterator" id="EmployeeId">
+      <AttrNames>
+        <Item Value="EmployeeId"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

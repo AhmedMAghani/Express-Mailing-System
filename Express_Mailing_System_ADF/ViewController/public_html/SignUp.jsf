@@ -24,26 +24,6 @@
                     <af:inputText id="it3" binding="#{backingBeanScope.backing_SignUp1.it3}"
                                   placeholder="Confirm Password"
                                   styleClass="AFStretchWidth" secret="true" showRequired="false" required="true"/>
-                    <af:spacer width="10" height="20" id="s6" binding="#{backingBeanScope.backing_SignUp1.s6}"/>
-                    <af:panelGridLayout id="pgl2" binding="#{backingBeanScope.backing_SignUp1.pgl2}">
-                        <af:gridRow height="auto" id="gr1"
-                                    binding="#{backingBeanScope.backing_SignUp1.gr1}">
-                            <af:gridCell width="50%" id="gc1"
-                                         binding="#{backingBeanScope.backing_SignUp1.gc1}" halign="end"
-                                         valign="stretch">
-                                <af:button text="Company" id="b3" binding="#{backingBeanScope.backing_SignUp1.b3}"
-                                           type="radio" partialSubmit="false" immediate="false"
-                                           inlineStyle="padding:5px; border-bottom-left-radius:0px;"/>
-                            </af:gridCell>
-                            <af:gridCell width="50%" id="gc2"
-                                         binding="#{backingBeanScope.backing_SignUp1.gc2}" halign="start"
-                                         valign="stretch">
-                                <af:button text="Employee" id="b4" binding="#{backingBeanScope.backing_SignUp1.b4}"
-                                           type="radio" partialSubmit="false" immediate="false" selected="true"
-                                           inlineStyle="padding:5px; border-bottom-left-radius:0px;"/>
-                            </af:gridCell>
-                        </af:gridRow>
-                    </af:panelGridLayout>
                     <af:spacer width="10" height="40" id="s3" binding="#{backingBeanScope.backing_SignUp1.s3}"/>
                     <af:panelGroupLayout id="pgl1" binding="#{backingBeanScope.backing_SignUp1.pgl1}">
                         <af:button text="Sign Up" id="b1" binding="#{backingBeanScope.backing_SignUp1.b1}"

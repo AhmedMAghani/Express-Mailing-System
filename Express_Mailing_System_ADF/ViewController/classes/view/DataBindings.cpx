@@ -3,9 +3,15 @@
              SeparateXMLFiles="false" Package="view" ClientType="Generic">
   <pageMap>
     <page path="/SignIn.jsf" usageId="view_SignInPageDef"/>
+    <page path="/WEB-INF/MainTF.xml#MainTF@methodCall1" usageId="view_MainTF_MainTF_methodCall1PageDef"/>
+    <page path="/Registration.jsf" usageId="view_RegistrationPageDef"/>
+    <page path="/untitled1.jsf" usageId="view_untitled1PageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_SignInPageDef" path="view.pageDefs.SignInPageDef"/>
+    <page id="view_MainTF_MainTF_methodCall1PageDef" path="view.pageDefs.MainTF_MainTF_methodCall1PageDef"/>
+    <page id="view_RegistrationPageDef" path="view.pageDefs.RegistrationPageDef"/>
+    <page id="view_untitled1PageDef" path="view.pageDefs.untitled1PageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="Express_AMDataControl" Package="model.BusinessComponents.ApplicationModules"

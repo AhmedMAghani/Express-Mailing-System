@@ -13,6 +13,10 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Departments_VO1"
+    ViewObjectName="model.BusinessComponents.ViewObjects.Departments_VO"
+    RowLevelBinds="true"/>
   <EntityUsage
     Name="Employees_EO"
     Entity="model.BusinessComponents.EntityObjects.Employees_EO"/>

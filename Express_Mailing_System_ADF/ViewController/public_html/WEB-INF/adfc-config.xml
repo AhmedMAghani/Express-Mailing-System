@@ -36,4 +36,10 @@
         <managed-bean-scope>backingBean</managed-bean-scope>
         <!--oracle-jdev-comment:managed-bean-jsp-link:1SignUp.jsf-->
     </managed-bean>
+    <managed-bean id="__1">
+        <managed-bean-name>backing_untitled2</managed-bean-name>
+        <managed-bean-class>view.backing.Untitled1</managed-bean-class>
+        <managed-bean-scope>backingBean</managed-bean-scope>
+        <!--oracle-jdev-comment:managed-bean-jsp-link:1untitled1.jsf-->
+    </managed-bean>
 </adfc-config>

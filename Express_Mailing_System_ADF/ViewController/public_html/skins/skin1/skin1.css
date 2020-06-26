@@ -12,7 +12,6 @@ af|button {
     padding-top: 5px;
     padding-right: 30px;
     padding-left: 30px;
-    border: 1px solid #c4ced7; 
     border-radius: 4px; 
 }
 
@@ -70,4 +69,31 @@ af|inputText::content {
         border-color: Black; 
     }
 
+}
+
+af|panelBox::header-text {
+    font-size: medium; 
+}
+
+af|panelBox::header-element {
+    font-size: x-large; 
+    color: #FF9C31; 
+}
+
+af|panelBox {
+    border-color: white; 
+    background-color: transparent; 
+}
+
+af|inputComboboxListOfValues::content {
+    padding-top:20px; 
+    padding-bottom:20px;
+    text-align: center; 
+    font-size: larger; 
+    padding-left: 50px; 
+    padding-right: 10px; 
+}
+
+af|button::link {
+    font-size: 16px; 
 }

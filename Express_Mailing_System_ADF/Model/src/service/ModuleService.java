@@ -32,23 +32,11 @@ public class ModuleService {
         return false;
     }
     
-    public Boolean signUp(String userName, String pass, AccountType type) {
-        if (searchBranchUserAccounts(userName, pass) || searchEmployeeUserAccounts(userName, pass))
-            return false;
-        saveAccount(userName, pass, type);
-        return true;
+    public BigDecimal signUp(String userName, String pass) {
+        if (searchEmployeeUserAccounts(userName, pass))
+            return new BigDecimal(0);
+        return saveEmployeeAccount(userName, pass);
     }
-
-   
-
-    private void saveAccount(String userName, String pass, AccountType type) {
-        if (type == AccountType.COMPANY_BRANCH){
-            saveBranchAccount(userName, pass);
-        } else {
-            saveEmployeeAccount(userName, pass);
-        }
-    }
-
     
     private Boolean searchBranchUserAccounts(String userName, String pass) {
         BranchUserAccounts_VORowImpl branchUserRow;
@@ -78,21 +66,21 @@ public class ModuleService {
         return false;
     }
     
-    private void saveBranchAccount(String userName, String pass) {
-        BranchUserAccounts_VORowImpl branchUserRow;
-        Integer lastRecordID;
-        RowSetIterator rowIterator = appModule.getBranchUserAccounts1().createRowSetIterator(null);
-        lastRecordID = ((BranchUserAccounts_VORowImpl)rowIterator.last()).getAccountId().intValue();
-        branchUserRow = (BranchUserAccounts_VORowImpl) rowIterator.createRow();
-        branchUserRow.setAccountId(new BigDecimal(lastRecordID+1));
-        branchUserRow.setUserName(userName);
-        branchUserRow.setPassword(pass);
-        rowIterator.insertRow(branchUserRow);
-        appModule.getTransaction().commit();
-        rowIterator.closeRowSetIterator();
-    }
+//    private void saveBranchAccount(String userName, String pass) {
+//        BranchUserAccounts_VORowImpl branchUserRow;
+//        Integer lastRecordID;
+//        RowSetIterator rowIterator = appModule.getBranchUserAccounts1().createRowSetIterator(null);
+//        lastRecordID = ((BranchUserAccounts_VORowImpl) rowIterator.last()).getAccountId().intValue();
+//        branchUserRow = (BranchUserAccounts_VORowImpl) rowIterator.createRow();
+//        branchUserRow.setAccountId(new BigDecimal(lastRecordID+1));
+//        branchUserRow.setUserName(userName);
+//        branchUserRow.setPassword(pass);
+//        rowIterator.insertRow(branchUserRow);
+//        appModule.getTransaction().commit();
+//        rowIterator.closeRowSetIterator();
+//    }
 
-    private void saveEmployeeAccount(String userName, String pass) {
+    private BigDecimal saveEmployeeAccount(String userName, String pass) {
         EmployeeUserAccounts_VORowImpl employeeUserRow;
         Integer lastRecordID;
         RowSetIterator rowIterator = appModule.getEmployeeUserAccounts1().createRowSetIterator(null);
@@ -102,17 +90,18 @@ public class ModuleService {
         employeeUserRow.setUserName(userName);
         employeeUserRow.setPassword(pass);
         rowIterator.insertRow(employeeUserRow);
-        appModule.getTransaction().commit();
+        commit();
         rowIterator.closeRowSetIterator();
+        return employeeUserRow.getAccountId();
+    }
+    
+    public void commit(){
+        appModule.getTransaction().commit();
     }
     
     private Integer checklastNull(RowSetIterator rowIterator){
         if (((EmployeeUserAccounts_VORowImpl)rowIterator.last()) != null)
             return ((EmployeeUserAccounts_VORowImpl)rowIterator.last()).getAccountId().intValue();
         return 0;
-    }
-    
-    private Integer getLastRecordIndex(){
-        return null;
     }
 }

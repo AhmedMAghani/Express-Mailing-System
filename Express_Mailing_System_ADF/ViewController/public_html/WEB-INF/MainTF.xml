@@ -18,6 +18,17 @@
       <managed-bean-scope>backingBean</managed-bean-scope>
       <!--oracle-jdev-comment:managed-bean-jsp-link:1SignUp.jsf-->
     </managed-bean>
+    <managed-bean id="__14">
+      <managed-bean-name>backing_CompleteRegistration</managed-bean-name>
+      <managed-bean-class>view.backing.CompleteRegistration</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__17">
+      <managed-bean-name>backing_Registration</managed-bean-name>
+      <managed-bean-class>view.backing.Registration</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+      <!--oracle-jdev-comment:managed-bean-jsp-link:1Registration.jsf-->
+    </managed-bean>
     <view id="SignIn">
       <page>/SignIn.jsf</page>
     </view>
@@ -29,6 +40,18 @@
     </task-flow-call>
     <view id="SignUp">
       <page>/SignUp.jsf</page>
+    </view>
+    <method-call id="methodCall1">
+      <method>#{bindings.CreateInsert.execute}</method>
+      <outcome>
+        <fixed-outcome>CreateInsert</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="Registration">
+      <page>/Registration.jsf</page>
+    </view>
+    <view id="untitled1">
+      <page>/untitled1.jsf</page>
     </view>
     <control-flow-rule id="__1">
       <from-activity-id>SignIn</from-activity-id>
@@ -47,7 +70,20 @@
         <from-outcome>toSignIn</from-outcome>
         <to-activity-id>SignIn</to-activity-id>
       </control-flow-case>
-      <control-flow-case id="__8">
+      <control-flow-case id="__9">
+        <from-outcome>toCompleteR</from-outcome>
+        <to-activity-id>methodCall1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__12">
+      <from-activity-id>methodCall1</from-activity-id>
+      <control-flow-case id="__13">
+        <to-activity-id>untitled1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__15">
+      <from-activity-id>Registration</from-activity-id>
+      <control-flow-case id="__16">
         <from-outcome>toAppTFCall2</from-outcome>
         <to-activity-id>AppTFCall</to-activity-id>
       </control-flow-case>

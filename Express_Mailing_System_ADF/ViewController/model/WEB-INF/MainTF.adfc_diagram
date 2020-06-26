@@ -1,19 +1,24 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <SDM>
    <OverallProperties
-      id="OverallProperties1"/>
+      id="OverallProperties1">
+      <property
+         name="x">91.5</property>
+      <property
+         name="y">266.5</property>
+   </OverallProperties>
    <View
       id="View2">
       <property
          name="activityId">SignIn</property>
       <property
-         name="x">218.5</property>
+         name="x">91.5</property>
       <property
          name="start">true</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>SignIn&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">287.6953</property>
+         name="y">98.79883</property>
       <property
          name="page">/SignIn.jsf</property>
       <property
@@ -28,9 +33,9 @@
       <property
          name="activityId">AppTFCall</property>
       <property
-         name="x">709.5</property>
+         name="x">345.5625</property>
       <property
-         name="y">164.44824</property>
+         name="y">100.44824</property>
       <property
          name="documentReference">/WEB-INF/AppTFCall.xml</property>
       <property
@@ -43,11 +48,11 @@
       <property
          name="activityId">SignUp</property>
       <property
-         name="x">718.5</property>
+         name="x">89.5</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>SignUp&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">407.09766</property>
+         name="y">269.87354</property>
       <property
          name="page">/SignUp.jsf</property>
       <property
@@ -63,7 +68,7 @@
       <property
          name="fromOutcome">toSignUp</property>
       <property
-         name="sdm:polyPoints">R54,259.5,290.84473,677.5,406.74707,L50</property>
+         name="sdm:polyPoints">L46,43.581493,94.94824,41.552414,273.02295,L54</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -73,7 +78,7 @@
       <property
          name="fromOutcome">toAppTFCall</property>
       <property
-         name="sdm:polyPoints">R46,259.5,283.84473,668.5,164.09766,L50</property>
+         name="sdm:polyPoints">R50,132.5,98.44824,304.5625,100.09766,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -83,16 +88,81 @@
       <property
          name="fromOutcome">toSignIn</property>
       <property
-         name="sdm:polyPoints">L54,676.54645,410.24707,259.5,294.34473,R58</property>
+         name="sdm:polyPoints">L46,48.5,266.02295,50.5,101.94824,L54</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
-      id="ControlFlowCase8"
+      id="ControlFlowCase10"
       from="View5"
+      to="MethodCall12">
+      <property
+         name="fromOutcome">toCompleteR</property>
+      <property
+         name="sdm:polyPoints">B50,89.5,323.52295,214.5,395.24707,T44</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase11"
+      from="View14"
       to="TaskFlowCall3">
       <property
          name="fromOutcome">toAppTFCall2</property>
       <property
-         name="sdm:polyPoints">T50,718.5,352.74707,709.5,218.09766,B50</property>
+         name="sdm:polyPoints">T50,346.0,213.49414,345.5625,154.09766,B50</property>
    </ControlFlowCase>
+   <MethodCall
+      id="MethodCall12">
+      <property
+         name="activityId">methodCall1</property>
+      <property
+         name="x">218.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>methodCall1&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="y">449.59766</property>
+      <property
+         name="exceptionHandler">false</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase13"
+      from="MethodCall12"
+      to="View15">
+      <property
+         name="fromOutcome">*</property>
+      <property
+         name="sdm:polyPoints">T56,221.5,395.24707,346.0,321.49414,B50</property>
+   </ControlFlowCase>
+   <View
+      id="View14">
+      <property
+         name="activityId">Registration</property>
+      <property
+         name="x">346.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Registration&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">267.84473</property>
+      <property
+         name="page">/Registration.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="thumbnailExpanded">false</property>
+   </View>
+   <View
+      id="View15">
+      <property
+         name="activityId">untitled1</property>
+      <property
+         name="x">379.5</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>untitled1&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">444.09766</property>
+      <property
+         name="page">/untitled1.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
 </SDM>

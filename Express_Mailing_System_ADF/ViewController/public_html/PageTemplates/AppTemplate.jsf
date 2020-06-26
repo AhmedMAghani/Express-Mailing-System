@@ -20,7 +20,7 @@
         </afc:component>
     </af:xmlContent>
     <af:group id="pt_g1">
-        <af:panelGridLayout id="pt_pgl1">
+        <af:panelGridLayout id="pt_pgl1" inlineStyle="height:100%">
         <af:gridRow height="10%" id="pt_gr1">
             <af:gridCell width="20%" id="pt_gc1" halign="stretch" valign="stretch"
                          inlineStyle="background-color:#e7e7e7;">
@@ -36,7 +36,7 @@
                     </af:panelGroupLayout>
             </af:gridCell>
         </af:gridRow>
-        <af:gridRow height="100%" id="pt_gr2">
+        <af:gridRow height="90%" id="pt_gr2">
             <af:gridCell width="20%" id="pt_gc3" halign="stretch" valign="stretch"
                          inlineStyle="background-color:#e7e7e7;">
                 <af:panelGroupLayout id="pt_pgl4">
@@ -45,7 +45,8 @@
             </af:gridCell>
             <af:gridCell width="80%" id="pt_gc4" halign="stretch" valign="stretch"
                          inlineStyle="background-color:white;">
-                <af:panelGroupLayout id="pt_pgl5">
+                <af:panelGroupLayout id="pt_pgl5" styleClass="AFStretchWidth"
+                                     layout="vertical" halign="center" valign="top">
                     <af:facetRef facetName="Content"/>
                 </af:panelGroupLayout>
             </af:gridCell>

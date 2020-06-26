@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57"
+                id="MainTF_MainTF_methodCall1PageDef" Package="view.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="Employees1" RangeSize="25" DataControl="Express_AMDataControl" id="Employees1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="Employees1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>
