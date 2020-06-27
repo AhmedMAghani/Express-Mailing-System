@@ -9,7 +9,8 @@
   DBObjectType="table"
   DBObjectName="EMPLOYEES"
   AliasName="Employees_EO"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <Attribute
     Name="EmployeeId"
     ColumnName="EMPLOYEE_ID"
@@ -33,6 +34,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="60"/>
     </DesignTime>
+    <validation:CompareValidationBean
+      Name="EmployeeNameRule0"
+      ResId="model.BusinessComponents.EntityObjects.Employees_EO.EmployeeName_Rule_0"
+      OnAttribute="EmployeeName"
+      OperandType="LITERAL"
+      Inverse="false"
+      CompareType="GREATERTHAN"
+      CompareValue="3"/>
   </Attribute>
   <Attribute
     Name="EmployeeEmail"
@@ -45,6 +54,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="60"/>
     </DesignTime>
+    <validation:RegExpValidationBean
+      Name="EmployeeEmailRule0"
+      ResId="model.BusinessComponents.EntityObjects.Employees_EO.EmployeeEmail_Rule_0"
+      OnAttribute="EmployeeEmail"
+      Pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+      Inverse="false"/>
   </Attribute>
   <Attribute
     Name="EmpPhone1"
@@ -219,4 +234,8 @@
       <Item Value="model.BusinessComponents.EntityObjects.Employees_EO.DepartmentId"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

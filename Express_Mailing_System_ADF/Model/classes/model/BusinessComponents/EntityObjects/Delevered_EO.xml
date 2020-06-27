@@ -39,7 +39,9 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="DELEVERED"/>
+    TableName="DELEVERED"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
   <AccessorAttribute
     Name="Awb"
     Association="model.BusinessComponents.AssociationLinks.DeleveredAwbFk1_AL"

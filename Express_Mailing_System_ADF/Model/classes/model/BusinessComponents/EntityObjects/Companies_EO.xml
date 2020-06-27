@@ -9,7 +9,8 @@
   DBObjectType="table"
   DBObjectName="COMPANIES"
   AliasName="Companies_EO"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <Attribute
     Name="CompanyId"
     IsNotNull="true"
@@ -66,6 +67,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="60"/>
     </DesignTime>
+    <validation:RegExpValidationBean
+      Name="CompanyEmailRule0"
+      OnAttribute="CompanyEmail"
+      Pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+      Inverse="false"
+      ResId="model.BusinessComponents.EntityObjects.Companies_EO.CompanyEmail_Rule_0"/>
   </Attribute>
   <AccessorAttribute
     Name="CompanyBranches"
@@ -105,4 +112,8 @@
       <Item Value="model.BusinessComponents.EntityObjects.Companies_EO.CompanyId"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

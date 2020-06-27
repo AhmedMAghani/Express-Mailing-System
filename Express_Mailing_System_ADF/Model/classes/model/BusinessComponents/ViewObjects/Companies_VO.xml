@@ -36,12 +36,6 @@
     EntityUsage="Companies_EO"
     AliasName="COMPANY_WEBSITE"/>
   <ViewAttribute
-    Name="CompanyAddress"
-    PrecisionRule="true"
-    EntityAttrName="CompanyAddress"
-    EntityUsage="Companies_EO"
-    AliasName="COMPANY_ADDRESS"/>
-  <ViewAttribute
     Name="CompanyEmail"
     PrecisionRule="true"
     EntityAttrName="CompanyEmail"

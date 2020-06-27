@@ -97,3 +97,8 @@ af|inputComboboxListOfValues::content {
 af|button::link {
     font-size: 16px; 
 }
+
+.AFAppNavbarButton {
+    background-color: white; 
+    border: 0px solid #D9DFE3; 
+}

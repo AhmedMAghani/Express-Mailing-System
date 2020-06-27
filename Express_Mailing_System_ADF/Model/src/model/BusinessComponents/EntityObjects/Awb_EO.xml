@@ -21,11 +21,12 @@
     PrimaryKey="true"/>
   <Attribute
     Name="SourceId"
-    ColumnName="SOURCE_ID"
+    ColumnName="&quot;Synchronize:Fix_SQL&quot;"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="AWB"/>
+    ColumnType="$none$"
+    IsQueriable="false"
+    IsPersistent="false"/>
   <Attribute
     Name="PiecesNo"
     ColumnName="PIECES_NO"
@@ -59,6 +60,14 @@
       <Attr Name="_DisplaySize" Value="300"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="ContractNo"
+    IsNotNull="true"
+    ColumnName="CONTRACT_NO"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="AWB"/>
   <AccessorAttribute
     Name="AwbAddresses"
     Association="model.BusinessComponents.AssociationLinks.AwbAddressesAwbFk1_AL"
@@ -122,6 +131,13 @@
     AssociationOtherEnd="model.BusinessComponents.AssociationLinks.TrackingHistoryFk1_AL.Awb"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Contracts"
+    Association="model.BusinessComponents.EntityObjects.AwbContractsFk1Assoc"
+    AssociationEnd="model.BusinessComponents.EntityObjects.AwbContractsFk1Assoc.Contracts"
+    AssociationOtherEnd="model.BusinessComponents.EntityObjects.AwbContractsFk1Assoc.Awb"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="AwbPk"
     PrimaryKey="true">
@@ -133,14 +149,14 @@
     </AttrArray>
   </Key>
   <Key
-    Name="AwbBranchsourceFk1">
+    Name="AwbContractsFk1">
     <DesignTime>
-      <Attr Name="_referencedKey" Value="COMPANY_BRANCHES_PK"/>
+      <Attr Name="_referencedKey" Value="CONTRACS_PK"/>
       <Attr Name="_isForeign" Value="true"/>
-      <Attr Name="_DBObjectName" Value="AWB_BRANCHSOURCE_FK1"/>
+      <Attr Name="_DBObjectName" Value="AWB_CONTRACTS_FK1"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.BusinessComponents.EntityObjects.Awb_EO.SourceId"/>
+      <Item Value="model.BusinessComponents.EntityObjects.Awb_EO.ContractNo"/>
     </AttrArray>
   </Key>
   <Key

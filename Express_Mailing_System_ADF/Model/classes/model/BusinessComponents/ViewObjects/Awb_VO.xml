@@ -13,6 +13,52 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Contracts_VO1"
+    ViewObjectName="model.BusinessComponents.ViewObjects.Contracts_VO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Orders_VO1"
+    ViewObjectName="model.BusinessComponents.ViewObjects.Orders_VO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ContractNo"
+    ListVOName="Contracts_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="LOV_ContractNo_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ContractNo"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ContractNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ContractNo"/>
+      <Item Value="StartDate"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_OrderId"
+    ListVOName="Orders_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="OrderId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="OrderNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="OrderNo"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="Awb_EO"
     Entity="model.BusinessComponents.EntityObjects.Awb_EO"/>
@@ -23,12 +69,6 @@
     EntityAttrName="AwbNo"
     EntityUsage="Awb_EO"
     AliasName="AWB_NO"/>
-  <ViewAttribute
-    Name="SourceId"
-    PrecisionRule="true"
-    EntityAttrName="SourceId"
-    EntityUsage="Awb_EO"
-    AliasName="SOURCE_ID"/>
   <ViewAttribute
     Name="PiecesNo"
     PrecisionRule="true"
@@ -46,13 +86,36 @@
     PrecisionRule="true"
     EntityAttrName="OrderId"
     EntityUsage="Awb_EO"
-    AliasName="ORDER_ID"/>
+    AliasName="ORDER_ID"
+    LOVName="LOV_OrderId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Remarks"
     PrecisionRule="true"
     EntityAttrName="Remarks"
     EntityUsage="Awb_EO"
     AliasName="REMARKS"/>
+  <ViewAttribute
+    Name="ContractNo"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ContractNo"
+    EntityUsage="Awb_EO"
+    AliasName="CONTRACT_NO"
+    LOVName="LOV_ContractNo">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="AwbAddresses"
     ViewLink="model.BusinessComponents.ViewLinks.AwbAddressesAwbFk1_VL"
@@ -88,4 +151,8 @@
     ViewLink="model.BusinessComponents.ViewLinks.TrackingHistoryFk1_VL"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

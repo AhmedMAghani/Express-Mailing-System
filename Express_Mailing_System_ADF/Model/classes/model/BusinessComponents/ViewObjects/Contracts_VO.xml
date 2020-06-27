@@ -13,6 +13,73 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Companies_VO1"
+    ViewObjectName="model.BusinessComponents.ViewObjects.Companies_VO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Representatives_VO1"
+    ViewObjectName="model.BusinessComponents.ViewObjects.Representatives_VO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Employees_VO1"
+    ViewObjectName="model.BusinessComponents.ViewObjects.Employees_VO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_CompanyId"
+    ListVOName="Companies_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CompanyId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CompanyId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ComapnyName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ReprsentiveId"
+    ListVOName="Representatives_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ReprsentiveId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="RepId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="RepName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_EmployeeId"
+    ListVOName="Employees_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="LOV_EmployeeId_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="EmployeeId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="EmployeeId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="EmployeeName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="Contracts_EO"
     Entity="model.BusinessComponents.EntityObjects.Contracts_EO"/>
@@ -46,19 +113,43 @@
     PrecisionRule="true"
     EntityAttrName="CompanyId"
     EntityUsage="Contracts_EO"
-    AliasName="COMPANY_ID"/>
+    AliasName="COMPANY_ID"
+    LOVName="LOV_CompanyId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ReprsentiveId"
     PrecisionRule="true"
     EntityAttrName="ReprsentiveId"
     EntityUsage="Contracts_EO"
-    AliasName="REPRSENTIVE_ID"/>
+    AliasName="REPRSENTIVE_ID"
+    LOVName="LOV_ReprsentiveId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="EmployeeId"
     PrecisionRule="true"
     EntityAttrName="EmployeeId"
     EntityUsage="Contracts_EO"
-    AliasName="EMPLOYEE_ID"/>
+    AliasName="EMPLOYEE_ID"
+    LOVName="LOV_EmployeeId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Remarks"
     PrecisionRule="true"
@@ -86,4 +177,8 @@
     ViewLink="model.BusinessComponents.ViewLinks.ZonesPaymentPlansFk1_VL"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="BranchsDetailsPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CompanyBranches1" RangeSize="25" DataControl="Express_AMDataControl"
+              id="CompanyBranches1Iterator"/>
+    <iterator Binds="Representatives1" RangeSize="25" DataControl="Express_AMDataControl"
+              id="Representatives1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="CompanyBranches1Iterator" id="CompanyBranches1">
+      <nodeDefinition DefName="model.BusinessComponents.ViewObjects.CompanyBranches_VO" Name="CompanyBranches10">
+        <AttrNames>
+          <Item Value="BranchAddress"/>
+          <Item Value="CompanyId"/>
+          <Item Value="State"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="Representatives1Iterator" id="RepName">
+      <AttrNames>
+        <Item Value="RepName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Representatives1Iterator" id="RepPhone">
+      <AttrNames>
+        <Item Value="RepPhone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Representatives1Iterator" id="RepEmail">
+      <AttrNames>
+        <Item Value="RepEmail"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

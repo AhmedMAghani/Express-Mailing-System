@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import model.BusinessComponents.ViewObjects.common.EmployeeUserAccounts_VORow;
 
 import oracle.jbo.Row;
+import oracle.jbo.RowSet;
 import oracle.jbo.server.EntityImpl;
 import oracle.jbo.server.ViewRowImpl;
 // ---------------------------------------------------------------------
@@ -14,6 +15,7 @@ import oracle.jbo.server.ViewRowImpl;
 // ---    Warning: Do not modify method signatures of generated methods.
 // ---------------------------------------------------------------------
 public class EmployeeUserAccounts_VORowImpl extends ViewRowImpl implements EmployeeUserAccounts_VORow {
+
 
     public static final int ENTITY_EMPLOYEEUSERACCOUNTS_EO = 0;
 
@@ -25,7 +27,8 @@ public class EmployeeUserAccounts_VORowImpl extends ViewRowImpl implements Emplo
         UserName,
         Password,
         Role,
-        Employees;
+        Employees,
+        Roles_VO1;
         static AttributesEnum[] vals = null;
         ;
         private static final int firstIndex = 0;
@@ -50,11 +53,13 @@ public class EmployeeUserAccounts_VORowImpl extends ViewRowImpl implements Emplo
         }
     }
 
+
     public static final int ACCOUNTID = AttributesEnum.AccountId.index();
     public static final int USERNAME = AttributesEnum.UserName.index();
     public static final int PASSWORD = AttributesEnum.Password.index();
     public static final int ROLE = AttributesEnum.Role.index();
     public static final int EMPLOYEES = AttributesEnum.Employees.index();
+    public static final int ROLES_VO1 = AttributesEnum.Roles_VO1.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -146,6 +151,13 @@ public class EmployeeUserAccounts_VORowImpl extends ViewRowImpl implements Emplo
      */
     public void setEmployees(Row value) {
         setAttributeInternal(EMPLOYEES, value);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> Roles_VO1.
+     */
+    public RowSet getRoles_VO1() {
+        return (RowSet) getAttributeInternal(ROLES_VO1);
     }
 }
 

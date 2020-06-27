@@ -13,6 +13,52 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Zones_VO1"
+    ViewObjectName="model.BusinessComponents.ViewObjects.Zones_VO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Companies_VO1"
+    ViewObjectName="model.BusinessComponents.ViewObjects.Companies_VO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_State"
+    ListVOName="Zones_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="LOV_State_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="State"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ZoneId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ZoneName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CompanyId"
+    ListVOName="Companies_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="LOV_CompanyId_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CompanyId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CompanyId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ComapnyName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="CompanyBranches_EO"
     Entity="model.BusinessComponents.EntityObjects.CompanyBranches_EO"/>
@@ -34,13 +80,29 @@
     PrecisionRule="true"
     EntityAttrName="CompanyId"
     EntityUsage="CompanyBranches_EO"
-    AliasName="COMPANY_ID"/>
+    AliasName="COMPANY_ID"
+    LOVName="LOV_CompanyId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="State"
     PrecisionRule="true"
     EntityAttrName="State"
     EntityUsage="CompanyBranches_EO"
-    AliasName="STATE"/>
+    AliasName="STATE"
+    LOVName="LOV_State">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="AccountId"
     IsUnique="true"
@@ -68,4 +130,8 @@
     ViewLink="model.BusinessComponents.ViewLinks.RepresentativesFk2_VL"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

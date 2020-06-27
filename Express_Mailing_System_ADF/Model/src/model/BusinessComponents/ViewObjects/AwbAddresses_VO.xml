@@ -13,6 +13,70 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Awb_VO1"
+    ViewObjectName="model.BusinessComponents.ViewObjects.Awb_VO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Zones_VO1"
+    ViewObjectName="model.BusinessComponents.ViewObjects.Zones_VO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_AwbNo"
+    ListVOName="Awb_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AwbNo"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="AwbNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="AwbNo"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DestinationState"
+    ListVOName="Zones_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    MRUCount="0"
+    NullValueId="LOV_DestinationState_LOVUIHints_NullValueId">
+    <AttrArray Name="AttrNames">
+      <Item Value="DestinationState"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ZoneId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ZoneName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Source"
+    ListVOName="Zones_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="LOV_Source_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Source"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ZoneId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ZoneName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="AwbAddresses_EO"
     Entity="model.BusinessComponents.EntityObjects.AwbAddresses_EO"/>
@@ -28,7 +92,15 @@
     PrecisionRule="true"
     EntityAttrName="DestinationState"
     EntityUsage="AwbAddresses_EO"
-    AliasName="DESTINATION_STATE"/>
+    AliasName="DESTINATION_STATE"
+    LOVName="LOV_DestinationState">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Address"
     PrecisionRule="true"
@@ -40,12 +112,33 @@
     PrecisionRule="true"
     EntityAttrName="Source"
     EntityUsage="AwbAddresses_EO"
-    AliasName="SOURCE"/>
+    AliasName="SOURCE"
+    IsUpdateable="while_insert"
+    LOVName="LOV_Source">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="AwbNo"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="AwbNo"
     EntityUsage="AwbAddresses_EO"
-    AliasName="AWB_NO"/>
+    AliasName="AWB_NO"
+    LOVName="LOV_AwbNo">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

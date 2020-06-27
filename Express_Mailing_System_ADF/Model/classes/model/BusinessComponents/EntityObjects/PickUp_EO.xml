@@ -39,7 +39,9 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="PICK_UP"/>
+    TableName="PICK_UP"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
   <AccessorAttribute
     Name="Awb"
     Association="model.BusinessComponents.AssociationLinks.PickUpAwbFk1_AL"

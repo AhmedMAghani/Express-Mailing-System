@@ -14,6 +14,9 @@
     <page path="/EmployeeRegistration.jsf" usageId="view_EmployeeRegistrationPageDef"/>
     <page path="/EmpRegisteration.jsf" usageId="view_EmpRegisterationPageDef"/>
     <page path="/Home.jsf" usageId="view_HomePageDef"/>
+    <page path="/CompaniesDetails.jsff" usageId="view_CompaniesDetailsPageDef"/>
+    <page path="/BranchsDetails.jsff" usageId="view_BranchsDetailsPageDef"/>
+    <page path="/Zone.jsff" usageId="view_ZonePageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_SignInPageDef" path="view.pageDefs.SignInPageDef"/>
@@ -23,6 +26,9 @@
     <page id="view_EmployeeRegistrationPageDef" path="view.pageDefs.EmployeeRegistrationPageDef"/>
     <page id="view_EmpRegisterationPageDef" path="view.pageDefs.EmpRegisterationPageDef"/>
     <page id="view_HomePageDef" path="view.pageDefs.HomePageDef"/>
+    <page id="view_CompaniesDetailsPageDef" path="view.pageDefs.CompaniesDetailsPageDef"/>
+    <page id="view_BranchsDetailsPageDef" path="view.pageDefs.BranchsDetailsPageDef"/>
+    <page id="view_ZonePageDef" path="view.pageDefs.ZonePageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="Express_AMDataControl" Package="model.BusinessComponents.ApplicationModules"

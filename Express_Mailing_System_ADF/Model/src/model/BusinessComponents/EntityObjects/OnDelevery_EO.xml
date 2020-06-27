@@ -39,7 +39,9 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="ON_DELEVERY"/>
+    TableName="ON_DELEVERY"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
   <AccessorAttribute
     Name="Awb1"
     Association="model.BusinessComponents.AssociationLinks.OnDeleveryAwbFk1_AL"

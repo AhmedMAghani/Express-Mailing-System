@@ -13,6 +13,52 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Awb_VO1"
+    ViewObjectName="model.BusinessComponents.ViewObjects.Awb_VO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Employees_VO1"
+    ViewObjectName="model.BusinessComponents.ViewObjects.Employees_VO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_AwbNo"
+    ListVOName="Awb_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="LOV_AwbNo_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AwbNo"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="AwbNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="AwbNo"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_EmployeeId"
+    ListVOName="Employees_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="LOV_EmployeeId_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="EmployeeId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="EmployeeId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="EmployeeName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="PickUp_EO"
     Entity="model.BusinessComponents.EntityObjects.PickUp_EO"/>
@@ -28,17 +74,37 @@
     PrecisionRule="true"
     EntityAttrName="AwbNo"
     EntityUsage="PickUp_EO"
-    AliasName="AWB_NO"/>
+    AliasName="AWB_NO"
+    LOVName="LOV_AwbNo">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="EmployeeId"
     PrecisionRule="true"
     EntityAttrName="EmployeeId"
     EntityUsage="PickUp_EO"
-    AliasName="EMPLOYEE_ID"/>
+    AliasName="EMPLOYEE_ID"
+    LOVName="LOV_EmployeeId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="PickUpDate"
     PrecisionRule="true"
     EntityAttrName="PickUpDate"
     EntityUsage="PickUp_EO"
     AliasName="PICK_UP_DATE"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

@@ -9,7 +9,8 @@
   DBObjectType="table"
   DBObjectName="AWB_ADDRESSES"
   AliasName="AwbAddresses_EO"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <Attribute
     Name="AddressId"
     IsNotNull="true"
@@ -25,7 +26,16 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="AWB_ADDRESSES"/>
+    TableName="AWB_ADDRESSES">
+    <validation:CompareValidationBean
+      Name="DestinationStateRule0"
+      ResId="model.BusinessComponents.EntityObjects.AwbAddresses_EO.DestinationState_Rule_0"
+      OnAttribute="DestinationState"
+      OperandType="JBO"
+      Inverse="true"
+      CompareType="EQUALTO"
+      CompareValue="model.BusinessComponents.ViewObjects.AwbAddresses_VO.Source"/>
+  </Attribute>
   <Attribute
     Name="Address"
     Precision="300"
@@ -117,4 +127,8 @@
       <Item Value="model.BusinessComponents.EntityObjects.AwbAddresses_EO.DestinationState"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

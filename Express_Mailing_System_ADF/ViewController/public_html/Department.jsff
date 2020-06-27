@@ -1,9 +1,30 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
-    <af:pageTemplate viewId="/PageTemplates/FragmentTemplate.jsf" id="pt1"
-                     binding="#{backingBeanScope.backing_Department.pt1}">
-        <f:facet name="NavBar"/>
+    <af:pageTemplate viewId="/PageTemplates/FragmentTemplate.jsf" id="pt1">
+        <f:facet name="NavBar1">
+            <af:button text="Users" id="b1" binding="#{backingBeanScope.backing_Department.b1}" styleClass="AFAppNavbarButton"
+                       inlineStyle="text-align:center; line-height:70px;" selected="false" action="toSystemUser"/>
+        </f:facet>
+        <f:facet name="NavBar2">
+            <af:button text="Zone Payment" id="b2" binding="#{backingBeanScope.backing_Department.b2}"
+                       styleClass="AFAppNavbarButton" inlineStyle="text-align:center; line-height:70px;"
+                       selected="false" action="toZonePayment"/>
+        </f:facet>
+        <f:facet name="NavBar3">
+            <af:button text="Employees" id="b3" binding="#{backingBeanScope.backing_Department.b3}"
+                       styleClass="AFAppNavbarButton" inlineStyle="text-align:center; line-height:70px;"
+                       selected="false" action="toEmployees"/>
+        </f:facet>
+        <f:facet name="NavBar4">
+            <af:button text="Department" id="b4" binding="#{backingBeanScope.backing_Department.b4}"
+                       styleClass="AFAppNavbarButton" inlineStyle="text-align:center; line-height:70px;"
+                       selected="true" action="toDepartments"/>
+        </f:facet>
+        <f:facet name="NavBar5">
+            <af:button text="Zone" id="b5" binding="#{backingBeanScope.backing_Department.b5}" styleClass="AFAppNavbarButton"
+                       inlineStyle="text-align:center; line-height:70px;" selected="false" action="toZone"/>
+        </f:facet>
         <f:facet name="Content"/>
     </af:pageTemplate>
     <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_Department-->

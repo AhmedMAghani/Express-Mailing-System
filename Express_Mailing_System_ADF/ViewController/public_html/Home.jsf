@@ -24,7 +24,7 @@
                 </f:facet>
                 <f:facet name="Header">
                     <af:outputFormatted id="of1"
-                                        inlineStyle="font-size:large; font-family:Arial; color:#ff9c31; line-height:50%;"
+                                        inlineStyle="font-size:large; font-family:Arial; color:#ff9c31; line-height:50%; margin:20px; text-align:end;"
                                         binding="#{backingBeanScope.backing_Home2.of1}"/>
                 </f:facet>
             </af:pageTemplate>

@@ -9,7 +9,8 @@
   DBObjectType="table"
   DBObjectName="EMPLOYEE_USER_ACCOUNTS"
   AliasName="EmployeeUserAccounts_EO"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <Attribute
     Name="AccountId"
     IsNotNull="true"
@@ -31,6 +32,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
+    <validation:LengthValidationBean
+      Name="UserNameRule0"
+      ResId="model.BusinessComponents.EntityObjects.EmployeeUserAccounts_EO.UserName_Rule_0"
+      OnAttribute="UserName"
+      CompareType="GREATERTHAN"
+      DataType="CHARACTER"
+      CompareLength="3"
+      Inverse="false"/>
   </Attribute>
   <Attribute
     Name="Password"
@@ -43,6 +52,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <validation:LengthValidationBean
+      Name="PasswordRule0"
+      ResId="model.BusinessComponents.EntityObjects.EmployeeUserAccounts_EO.Password_Rule_0"
+      OnAttribute="Password"
+      CompareType="GREATERTHAN"
+      DataType="CHARACTER"
+      CompareLength="4"
+      Inverse="false"/>
   </Attribute>
   <Attribute
     Name="Role"
@@ -96,4 +113,8 @@
       <Item Value="model.BusinessComponents.EntityObjects.EmployeeUserAccounts_EO.Role"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

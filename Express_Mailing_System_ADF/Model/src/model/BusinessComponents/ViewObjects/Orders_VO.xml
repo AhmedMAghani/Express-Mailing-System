@@ -13,6 +13,52 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Contracts_VO1"
+    ViewObjectName="model.BusinessComponents.ViewObjects.Contracts_VO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Companies_VO1"
+    ViewObjectName="model.BusinessComponents.ViewObjects.Companies_VO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ContractNo"
+    ListVOName="Contracts_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="LOV_ContractNo_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ContractNo"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ContractNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ContractNo"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ComapnyId"
+    ListVOName="Companies_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="LOV_ComapnyId_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ComapnyId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CompanyId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ComapnyName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="Orders_EO"
     Entity="model.BusinessComponents.EntityObjects.Orders_EO"/>
@@ -28,13 +74,29 @@
     PrecisionRule="true"
     EntityAttrName="ContractNo"
     EntityUsage="Orders_EO"
-    AliasName="CONTRACT_NO"/>
+    AliasName="CONTRACT_NO"
+    LOVName="LOV_ContractNo">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ComapnyId"
     PrecisionRule="true"
     EntityAttrName="ComapnyId"
     EntityUsage="Orders_EO"
-    AliasName="COMAPNY_ID"/>
+    AliasName="COMAPNY_ID"
+    LOVName="LOV_ComapnyId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="OrderDate"
     PrecisionRule="true"
@@ -58,4 +120,8 @@
     ViewLink="model.BusinessComponents.ViewLinks.AwbOrdersFk1_VL"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

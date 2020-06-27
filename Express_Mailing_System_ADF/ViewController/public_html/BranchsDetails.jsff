@@ -3,8 +3,73 @@
                 xmlns:f="http://java.sun.com/jsf/core">
     <af:pageTemplate viewId="/PageTemplates/FragmentTemplate.jsf" id="pt1"
                      binding="#{backingBeanScope.backing_BranchsDetails.pt1}">
-        <f:facet name="NavBar"/>
-        <f:facet name="Content"/>
+        <f:facet name="NavBar1">
+            <af:button text="Companies Details" id="b1" binding="#{backingBeanScope.backing_BranchsDetails.b1}"
+                       styleClass="AFAppNavbarButton" inlineStyle="text-align:center; line-height:70px;"
+                       selected="false"
+                       action="toCompanies"/>
+        </f:facet>
+        <f:facet name="NavBar2">
+            <af:button text="Branchs Details" id="b2" binding="#{backingBeanScope.backing_BranchsDetails.b2}"
+                       styleClass="AFAppNavbarButton" inlineStyle="text-align:center; line-height:70px;"
+                       selected="true"
+                       action="toBranchs"/>
+        </f:facet>
+        <f:facet name="NavBar3"/>
+        <f:facet name="NavBar4"/>
+        <f:facet name="NavBar5"/>
+        <f:facet name="Content">
+            <af:panelGridLayout id="pgl1" binding="#{backingBeanScope.backing_BranchsDetails.pgl1}">
+                <af:gridRow marginTop="0px" height="auto" marginBottom="0px" id="gr1"
+                            binding="#{backingBeanScope.backing_BranchsDetails.gr1}">
+                    <af:gridCell marginStart="0px" width="30%" id="gc1"
+                                 binding="#{backingBeanScope.backing_BranchsDetails.gc1}">
+                        <af:listView value="#{bindings.CompanyBranches1.collectionModel}" var="item"
+                                     emptyText="#{bindings.CompanyBranches1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                     fetchSize="#{bindings.CompanyBranches1.rangeSize}" id="lv1"
+                                     binding="#{backingBeanScope.backing_BranchsDetails.lv1}">
+                            <af:listItem id="li1" binding="#{backingBeanScope.backing_BranchsDetails.li1}">
+                                <af:panelGroupLayout layout="horizontal" id="pgl2"
+                                                     binding="#{backingBeanScope.backing_BranchsDetails.pgl2}">
+                                    <f:facet name="separator">
+                                        <af:spacer width="10" id="s1"
+                                                   binding="#{backingBeanScope.backing_BranchsDetails.s1}"/>
+                                    </f:facet>
+                                    <af:outputFormatted value="#{item.bindings.BranchAddress.inputValue}" id="of1"
+                                                        binding="#{backingBeanScope.backing_BranchsDetails.of1}"/>
+                                    <af:selectOneChoice value="#{item.bindings.CompanyId.inputValue}"
+                                                        label="#{item.bindings.CompanyId.label}"
+                                                        required="#{bindings.CompanyBranches1.hints.CompanyId.mandatory}"
+                                                        shortDesc="#{bindings.CompanyBranches1.hints.CompanyId.tooltip}"
+                                                        readOnly="true" id="soc1"
+                                                        binding="#{backingBeanScope.backing_BranchsDetails.soc1}">
+                                        <f:selectItems value="#{item.bindings.CompanyId.items}" id="si1"
+                                                       binding="#{backingBeanScope.backing_BranchsDetails.si1}"/>
+                                        <f:validator binding="#{item.bindings.CompanyId.validator}"/>
+                                    </af:selectOneChoice>
+                                    <af:outputFormatted value="#{item.bindings.State.inputValue}" id="of2"
+                                                        binding="#{backingBeanScope.backing_BranchsDetails.of2}">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.CompanyBranches1.hints.State.format}"/>
+                                    </af:outputFormatted>
+                                </af:panelGroupLayout>
+                            </af:listItem>
+                        </af:listView>
+                    </af:gridCell>
+                    <af:gridCell marginStart="0px" width="70%" marginEnd="0px" id="gc2"
+                                 binding="#{backingBeanScope.backing_BranchsDetails.gc2}">
+                        <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_BranchsDetails.pfl1}">
+                            <af:outputFormatted value="#{bindings.RepName.inputValue}" id="of3"
+                                                binding="#{backingBeanScope.backing_BranchsDetails.of3}"/>
+                            <af:outputFormatted value="#{bindings.RepPhone.inputValue}" id="of4"
+                                                binding="#{backingBeanScope.backing_BranchsDetails.of4}"/>
+                            <af:outputFormatted value="#{bindings.RepEmail.inputValue}" id="of5"
+                                                binding="#{backingBeanScope.backing_BranchsDetails.of5}"/>
+                        </af:panelFormLayout>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </f:facet>
     </af:pageTemplate>
     <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_BranchsDetails-->
 </ui:composition>

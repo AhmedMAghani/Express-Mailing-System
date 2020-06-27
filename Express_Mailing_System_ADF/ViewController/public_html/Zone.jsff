@@ -3,8 +3,90 @@
                 xmlns:f="http://java.sun.com/jsf/core">
     <af:pageTemplate viewId="/PageTemplates/FragmentTemplate.jsf" id="pt1"
                      binding="#{backingBeanScope.backing_Zone.pt1}">
-        <f:facet name="NavBar"/>
-        <f:facet name="Content"/>
+        <f:facet name="NavBar1">
+            <af:button text="Users" id="b1" binding="#{backingBeanScope.backing_Zone.b1}"
+                       styleClass="AFAppNavbarButton" inlineStyle="text-align:center; line-height:70px;"
+                       selected="false"
+                       action="toCompanies"/>
+        </f:facet>
+        <f:facet name="NavBar2">
+            <af:button text="Zone Payment" id="b2" binding="#{backingBeanScope.backing_Zone.b2}"
+                       styleClass="AFAppNavbarButton" inlineStyle="text-align:center; line-height:70px;"
+                       selected="false"
+                       action="toCompanies"/>
+        </f:facet>
+        <f:facet name="NavBar3">
+            <af:button text="Employees" id="b3" binding="#{backingBeanScope.backing_Zone.b3}"
+                       styleClass="AFAppNavbarButton" inlineStyle="text-align:center; line-height:70px;"
+                       selected="false"
+                       action="toCompanies"/>
+        </f:facet>
+        <f:facet name="NavBar4">
+            <af:button text="Department" id="b4" binding="#{backingBeanScope.backing_Zone.b4}"
+                       styleClass="AFAppNavbarButton" inlineStyle="text-align:center; line-height:70px;"
+                       selected="false"
+                       action="toCompanies"/>
+        </f:facet>
+        <f:facet name="NavBar5">
+            <af:button text="Zone" id="b5" binding="#{backingBeanScope.backing_Zone.b5}"
+                       styleClass="AFAppNavbarButton" inlineStyle="text-align:center; line-height:70px;" selected="true"
+                       action="toCompanies"/>
+        </f:facet>
+        <f:facet name="Content">
+            <af:panelGridLayout id="pgl1" binding="#{backingBeanScope.backing_Zone.pgl1}">
+                <af:gridRow marginTop="0px" height="auto" id="gr1" binding="#{backingBeanScope.backing_Zone.gr1}">
+                    <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc1"
+                                 binding="#{backingBeanScope.backing_Zone.gc1}">
+                        <af:spacer width="10" height="40" id="s3" binding="#{backingBeanScope.backing_Zone.s3}"/>
+                        <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_Zone.pfl1}">
+                            <af:inputText value="#{bindings.ZoneName.inputValue}"
+                                          required="#{bindings.ZoneName.hints.mandatory}"
+                                          columns="#{bindings.ZoneName.hints.displayWidth}"
+                                          maximumLength="#{bindings.ZoneName.hints.precision}"
+                                          shortDesc="#{bindings.ZoneName.hints.tooltip}" id="it1"
+                                          binding="#{backingBeanScope.backing_Zone.it1}" placeholder="Zone Name">
+                                <f:validator binding="#{bindings.ZoneName.validator}"/>
+                            </af:inputText>
+                            <af:panelGroupLayout id="pgl2" binding="#{backingBeanScope.backing_Zone.pgl2}">
+                                <af:button actionListener="#{bindings.CreateInsert.execute}" text="New"
+                                           disabled="#{!bindings.CreateInsert.enabled}" id="b6"
+                                           binding="#{backingBeanScope.backing_Zone.b6}"/>
+                                <af:button actionListener="#{bindings.Commit.execute}" text="Save"
+                                           disabled="#{!bindings.Commit.enabled}" id="b7"
+                                           binding="#{backingBeanScope.backing_Zone.b7}"/>
+                            </af:panelGroupLayout>
+                        </af:panelFormLayout>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="0px" height="auto" marginBottom="0px" id="gr2"
+                            binding="#{backingBeanScope.backing_Zone.gr2}">
+                    <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc2"
+                                 binding="#{backingBeanScope.backing_Zone.gc2}">
+                        <af:spacer width="10" height="40" id="s2" binding="#{backingBeanScope.backing_Zone.s2}"/>
+                        <af:listView value="#{bindings.Zones1.collectionModel}" var="item"
+                                     emptyText="#{bindings.Zones1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                     fetchSize="#{bindings.Zones1.rangeSize}" id="lv1"
+                                     binding="#{backingBeanScope.backing_Zone.lv1}">
+                            <af:listItem id="li1" binding="#{backingBeanScope.backing_Zone.li1}">
+                                <af:panelGroupLayout layout="horizontal" id="pgl3"
+                                                     binding="#{backingBeanScope.backing_Zone.pgl3}">
+                                    <f:facet name="separator">
+                                        <af:spacer width="10" id="s1" binding="#{backingBeanScope.backing_Zone.s1}"/>
+                                    </f:facet>
+                                    <af:outputFormatted value="#{item.bindings.ZoneId.inputValue}" id="of1"
+                                                        binding="#{backingBeanScope.backing_Zone.of1}">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.Zones1.hints.ZoneId.format}"/>
+                                    </af:outputFormatted>
+                                    <af:outputFormatted value="#{item.bindings.ZoneName.inputValue}" id="of2"
+                                                        binding="#{backingBeanScope.backing_Zone.of2}"/>
+                                </af:panelGroupLayout>
+                            </af:listItem>
+                        </af:listView>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </f:facet>
     </af:pageTemplate>
     <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_Zone-->
 </ui:composition>

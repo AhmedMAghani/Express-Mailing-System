@@ -22,6 +22,29 @@
     <Attr Name="_codeGenFlag2" Value="Access|Def|Coll|Prog|VarAccess"/>
     <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
+  <ViewAccessor
+    Name="Roles_VO1"
+    ViewObjectName="model.BusinessComponents.ViewObjects.Roles_VO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Role"
+    ListVOName="Roles_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="LOV_Role_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Role"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="RoleId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="RoleName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="EmployeeUserAccounts_EO"
     Entity="model.BusinessComponents.EntityObjects.EmployeeUserAccounts_EO"/>
@@ -50,10 +73,22 @@
     PrecisionRule="true"
     EntityAttrName="Role"
     EntityUsage="EmployeeUserAccounts_EO"
-    AliasName="ROLE"/>
+    AliasName="ROLE"
+    LOVName="LOV_Role">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="Employees"
     ViewLink="model.BusinessComponents.ViewLinks.EmployeesAccountsFk2_VL"
     Type="oracle.jbo.Row"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

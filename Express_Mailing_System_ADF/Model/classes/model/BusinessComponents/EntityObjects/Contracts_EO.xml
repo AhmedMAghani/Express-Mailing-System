@@ -122,6 +122,13 @@
     AssociationOtherEnd="model.BusinessComponents.AssociationLinks.ZonesPaymentPlansFk1_AL.Contracts"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Awb"
+    Association="model.BusinessComponents.EntityObjects.AwbContractsFk1Assoc"
+    AssociationEnd="model.BusinessComponents.EntityObjects.AwbContractsFk1Assoc.Awb"
+    AssociationOtherEnd="model.BusinessComponents.EntityObjects.AwbContractsFk1Assoc.Contracts"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="ContracsPk"
     PrimaryKey="true">

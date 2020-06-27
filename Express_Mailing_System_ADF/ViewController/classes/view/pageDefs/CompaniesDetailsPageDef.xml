@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="CompaniesDetailsPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Companies1" RangeSize="25" DataControl="Express_AMDataControl" id="Companies1Iterator"/>
+    <iterator Binds="CompanyBranches3" RangeSize="25" DataControl="Express_AMDataControl"
+              id="CompanyBranches3Iterator"/>
+    <iterator Binds="Contracts2" RangeSize="25" DataControl="Express_AMDataControl" id="Contracts2Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="Companies1Iterator" id="Companies1">
+      <nodeDefinition DefName="model.BusinessComponents.ViewObjects.Companies_VO" Name="Companies10">
+        <AttrNames>
+          <Item Value="ComapnyName"/>
+          <Item Value="CompanyWebsite"/>
+          <Item Value="CompanyEmail"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="CompanyBranches3Iterator" id="CompanyBranches3">
+      <nodeDefinition DefName="model.BusinessComponents.ViewObjects.CompanyBranches_VO" Name="CompanyBranches30">
+        <AttrNames>
+          <Item Value="BranchAddress"/>
+          <Item Value="State"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="Contracts2Iterator" id="Contracts2">
+      <nodeDefinition DefName="model.BusinessComponents.ViewObjects.Contracts_VO" Name="Contracts20">
+        <AttrNames>
+          <Item Value="ContractNo"/>
+          <Item Value="StartDate"/>
+          <Item Value="EndDate"/>
+          <Item Value="BasePrice"/>
+          <Item Value="ReprsentiveId"/>
+          <Item Value="EmployeeId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

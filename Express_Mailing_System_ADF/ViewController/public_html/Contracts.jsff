@@ -3,7 +3,13 @@
                 xmlns:f="http://java.sun.com/jsf/core">
     <af:pageTemplate viewId="/PageTemplates/FragmentTemplate.jsf" id="pt1"
                      binding="#{backingBeanScope.backing_Contracts.pt1}">
-        <f:facet name="NavBar"/>
+        <f:facet name="NavBar1">
+        </f:facet>
+        <f:facet name="NavBar2">
+        </f:facet>
+        <f:facet name="NavBar3"/>
+        <f:facet name="NavBar4"/>
+        <f:facet name="NavBar5"/>
         <f:facet name="Content"/>
     </af:pageTemplate>
     <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_Contracts-->

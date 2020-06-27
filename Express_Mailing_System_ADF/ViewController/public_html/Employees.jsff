@@ -3,7 +3,32 @@
                 xmlns:f="http://java.sun.com/jsf/core">
     <af:pageTemplate viewId="/PageTemplates/FragmentTemplate.jsf" id="pt1"
                      binding="#{backingBeanScope.backing_Employees.pt1}">
-        <f:facet name="NavBar"/>
+        <f:facet name="NavBar1">
+            <af:button text="Users" id="b1" binding="#{backingBeanScope.backing_Employees.b1}"
+                       styleClass="AFAppNavbarButton" inlineStyle="text-align:center; line-height:70px;"
+                       selected="false" action="toSystemUser"/>
+        </f:facet>
+        <f:facet name="NavBar2">
+            <af:button text="Zone Payment" id="b2" binding="#{backingBeanScope.backing_Employees.b2}"
+                       styleClass="AFAppNavbarButton" inlineStyle="text-align:center; line-height:70px;"
+                       selected="false" action="toZonePayment"/>
+        </f:facet>
+        <f:facet name="NavBar3">
+            <af:button text="Employees" id="b3" binding="#{backingBeanScope.backing_Employees.b3}"
+                       styleClass="AFAppNavbarButton" inlineStyle="text-align:center; line-height:70px;"
+                       selected="true" action="toEmployees"/>
+        </f:facet>
+        <f:facet name="NavBar4">
+            <af:button text="Department" id="b4" binding="#{backingBeanScope.backing_Employees.b4}"
+                       styleClass="AFAppNavbarButton" inlineStyle="text-align:center; line-height:70px;"
+                       selected="false" action="toDepartments"/>
+        </f:facet>
+        <f:facet name="NavBar5">
+            <af:button text="Zone" id="b5" binding="#{backingBeanScope.backing_Employees.b5}"
+                       styleClass="AFAppNavbarButton" inlineStyle="text-align:center; line-height:70px;"
+                       selected="false"
+                       action="toZone"/>
+        </f:facet>
         <f:facet name="Content"/>
     </af:pageTemplate>
     <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_Employees-->
