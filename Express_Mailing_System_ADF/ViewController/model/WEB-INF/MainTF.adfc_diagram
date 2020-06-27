@@ -98,17 +98,7 @@
       <property
          name="fromOutcome">toCompleteR</property>
       <property
-         name="sdm:polyPoints">B50,89.5,323.52295,214.5,395.24707,T44</property>
-   </ControlFlowCase>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase11"
-      from="View14"
-      to="TaskFlowCall3">
-      <property
-         name="fromOutcome">toAppTFCall2</property>
-      <property
-         name="sdm:polyPoints">T50,346.0,213.49414,345.5625,154.09766,B50</property>
+         name="sdm:polyPoints">B50,89.5,323.52295,218.0,395.24707,T50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall12">
@@ -123,46 +113,39 @@
       <property
          name="exceptionHandler">false</property>
    </MethodCall>
+   <View
+      id="View18">
+      <property
+         name="activityId">EmpRegisteration</property>
+      <property
+         name="x">352.68945</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>EmpRegisteration&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">270.09766</property>
+      <property
+         name="page">/EmpRegisteration.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
    <ControlFlowCase
       islink="true"
-      id="ControlFlowCase13"
+      id="ControlFlowCase19"
       from="MethodCall12"
-      to="View15">
+      to="View18">
       <property
-         name="fromOutcome">*</property>
+         name="fromOutcome">CreateInsert</property>
       <property
-         name="sdm:polyPoints">T56,221.5,395.24707,346.0,321.49414,B50</property>
+         name="sdm:polyPoints">T56,221.5,395.24707,352.68945,323.74707,B50</property>
    </ControlFlowCase>
-   <View
-      id="View14">
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase20"
+      from="View18"
+      to="TaskFlowCall3">
       <property
-         name="activityId">Registration</property>
+         name="fromOutcome">toAppTFCall2</property>
       <property
-         name="x">346.0</property>
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>Registration&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
-      <property
-         name="y">267.84473</property>
-      <property
-         name="page">/Registration.jsf</property>
-      <property
-         name="exceptionHandler">false</property>
-      <property
-         name="thumbnailExpanded">false</property>
-   </View>
-   <View
-      id="View15">
-      <property
-         name="activityId">untitled1</property>
-      <property
-         name="x">379.5</property>
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>untitled1&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
-      <property
-         name="y">444.09766</property>
-      <property
-         name="page">/untitled1.jsf</property>
-      <property
-         name="exceptionHandler">false</property>
-   </View>
+         name="sdm:polyPoints">T50,352.68945,215.74707,345.5625,154.09766,B50</property>
+   </ControlFlowCase>
 </SDM>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="RegistrationPageDef"
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="EmpRegisterationPageDef"
                 Package="view.pageDefs">
   <parameters/>
   <executables>
@@ -7,11 +7,6 @@
     <iterator Binds="Employees1" RangeSize="25" DataControl="Express_AMDataControl" id="Employees1Iterator"/>
   </executables>
   <bindings>
-    <attributeValues IterBinding="Employees1Iterator" id="EmployeeId">
-      <AttrNames>
-        <Item Value="EmployeeId"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="Employees1Iterator" id="EmployeeName">
       <AttrNames>
         <Item Value="EmployeeName"/>
@@ -42,35 +37,13 @@
         <Item Value="EmpAddress2"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="Employees1Iterator" id="DepartmentId">
-      <AttrNames>
-        <Item Value="DepartmentId"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="Employees1Iterator" id="Statue">
-      <AttrNames>
-        <Item Value="Statue"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="Employees1Iterator" id="Salary">
-      <AttrNames>
-        <Item Value="Salary"/>
-      </AttrNames>
-    </attributeValues>
+    <list IterBinding="Employees1Iterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="Express_AMDataControl"/>
     <attributeValues IterBinding="Employees1Iterator" id="AccountId">
       <AttrNames>
         <Item Value="AccountId"/>
       </AttrNames>
     </attributeValues>
-    <action IterBinding="Employees1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
-    <tree IterBinding="Employees1Iterator" id="Employees1">
-      <nodeDefinition DefName="model.BusinessComponents.ViewObjects.Employees_VO" Name="Employees10">
-        <AttrNames>
-          <Item Value="EmployeeId"/>
-          <Item Value="EmployeeName"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="Express_AMDataControl"/>
   </bindings>
 </pageDefinition>

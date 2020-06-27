@@ -42,4 +42,10 @@
         <managed-bean-scope>backingBean</managed-bean-scope>
         <!--oracle-jdev-comment:managed-bean-jsp-link:1untitled1.jsf-->
     </managed-bean>
+    <managed-bean id="__2">
+        <managed-bean-name>backing_EmpRegisteration</managed-bean-name>
+        <managed-bean-class>view.backing.EmpRegisteration</managed-bean-class>
+        <managed-bean-scope>backingBean</managed-bean-scope>
+        <!--oracle-jdev-comment:managed-bean-jsp-link:1EmpRegisteration.jsf-->
+    </managed-bean>
 </adfc-config>

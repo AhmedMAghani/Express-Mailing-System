@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="EmpRegisteration.jsf" id="d1" binding="#{backingBeanScope.backing_EmpRegisteration.d1}">
+        <af:messages id="m1" binding="#{backingBeanScope.backing_EmpRegisteration.m1}"/>
+        <af:form id="f1" binding="#{backingBeanScope.backing_EmpRegisteration.f1}">
+            <af:pageTemplate viewId="/PageTemplates/AppTemplate.jsf" id="pt1"
+                             binding="#{backingBeanScope.backing_EmpRegisteration.pt1}">
+                <f:facet name="Pages">
+                    <af:outputFormatted value="Complete Registration" id="of1"
+                                        inlineStyle="font-size:large; font-family:Arial; margin-left:10px; color:#ff9c31;"
+                                        binding="#{backingBeanScope.backing_EmpRegisteration.of1}"/>
+                </f:facet>
+                <f:facet name="Content">
+                    <af:panelBox text="Employee Registeration" id="pb1" binding="#{backingBeanScope.backing_EmpRegisteration.pb1}"
+                                 showDisclosure="false">
+                        <f:facet name="toolbar"/>
+                        <af:panelGroupLayout id="pgl1" binding="#{backingBeanScope.backing_EmpRegisteration.pgl1}"
+                                             halign="start" valign="top">
+                            <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_EmpRegisteration.pfl1}">
+                                <af:inputText value="#{bindings.EmployeeName.inputValue}"
+                                              required="#{bindings.EmployeeName.hints.mandatory}"
+                                              columns="#{bindings.EmployeeName.hints.displayWidth}"
+                                              maximumLength="#{bindings.EmployeeName.hints.precision}"
+                                              shortDesc="#{bindings.EmployeeName.hints.tooltip}" id="it2"
+                                              binding="#{backingBeanScope.backing_EmpRegisteration.it2}"
+                                              placeholder=" Name">
+                                    <f:validator binding="#{bindings.EmployeeName.validator}"/>
+                                </af:inputText>
+                                <af:spacer width="10" height="10" id="s1"
+                                           binding="#{backingBeanScope.backing_EmpRegisteration.s1}"/>
+                                <af:inputText value="#{bindings.EmployeeEmail.inputValue}"
+                                              required="#{bindings.EmployeeEmail.hints.mandatory}"
+                                              columns="#{bindings.EmployeeEmail.hints.displayWidth}"
+                                              maximumLength="#{bindings.EmployeeEmail.hints.precision}"
+                                              shortDesc="#{bindings.EmployeeEmail.hints.tooltip}" id="it3"
+                                              binding="#{backingBeanScope.backing_EmpRegisteration.it3}"
+                                              placeholder="E-mail">
+                                    <f:validator binding="#{bindings.EmployeeEmail.validator}"/>
+                                </af:inputText>
+                                <af:spacer width="10" height="10" id="s3"
+                                           binding="#{backingBeanScope.backing_EmpRegisteration.s3}"/>
+                                <af:inputText value="#{bindings.EmpPhone1.inputValue}"
+                                              required="#{bindings.EmpPhone1.hints.mandatory}"
+                                              columns="#{bindings.EmpPhone1.hints.displayWidth}"
+                                              maximumLength="#{bindings.EmpPhone1.hints.precision}"
+                                              shortDesc="#{bindings.EmpPhone1.hints.tooltip}" id="it4"
+                                              binding="#{backingBeanScope.backing_EmpRegisteration.it4}"
+                                              placeholder="Phone1">
+                                    <f:validator binding="#{bindings.EmpPhone1.validator}"/>
+                                </af:inputText>
+                                <af:spacer width="10" height="10" id="s4"
+                                           binding="#{backingBeanScope.backing_EmpRegisteration.s4}"/>
+                                <af:inputText value="#{bindings.EmpPhone2.inputValue}"
+                                              required="#{bindings.EmpPhone2.hints.mandatory}"
+                                              columns="#{bindings.EmpPhone2.hints.displayWidth}"
+                                              maximumLength="#{bindings.EmpPhone2.hints.precision}"
+                                              shortDesc="#{bindings.EmpPhone2.hints.tooltip}" id="it5"
+                                              binding="#{backingBeanScope.backing_EmpRegisteration.it5}"
+                                              placeholder="Phone2">
+                                    <f:validator binding="#{bindings.EmpPhone2.validator}"/>
+                                </af:inputText>
+                                <af:spacer width="10" height="10" id="s5"
+                                           binding="#{backingBeanScope.backing_EmpRegisteration.s5}"/>
+                                <af:inputText value="#{bindings.EmpAddress1.inputValue}"
+                                              required="#{bindings.EmpAddress1.hints.mandatory}"
+                                              columns="#{bindings.EmpAddress1.hints.displayWidth}"
+                                              maximumLength="#{bindings.EmpAddress1.hints.precision}"
+                                              shortDesc="#{bindings.EmpAddress1.hints.tooltip}" id="it6"
+                                              binding="#{backingBeanScope.backing_EmpRegisteration.it6}"
+                                              placeholder="Address1">
+                                    <f:validator binding="#{bindings.EmpAddress1.validator}"/>
+                                </af:inputText>
+                                <af:spacer width="10" height="10" id="s2"
+                                           binding="#{backingBeanScope.backing_EmpRegisteration.s2}"/>
+                                <af:inputText value="#{bindings.EmpAddress2.inputValue}"
+                                              required="#{bindings.EmpAddress2.hints.mandatory}"
+                                              columns="#{bindings.EmpAddress2.hints.displayWidth}"
+                                              maximumLength="#{bindings.EmpAddress2.hints.precision}"
+                                              shortDesc="#{bindings.EmpAddress2.hints.tooltip}" id="it7"
+                                              binding="#{backingBeanScope.backing_EmpRegisteration.it7}"
+                                              placeholder="Address2">
+                                    <f:validator binding="#{bindings.EmpAddress2.validator}"/>
+                                </af:inputText>
+                                <af:spacer width="10" height="10" id="s6"
+                                           binding="#{backingBeanScope.backing_EmpRegisteration.s6}"/>
+                                <af:selectOneChoice value="#{bindings.DepartmentId.inputValue}"
+                                                    required="#{bindings.DepartmentId.hints.mandatory}"
+                                                    shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="soc1"
+                                                    binding="#{backingBeanScope.backing_EmpRegisteration.soc1}">
+                                    <f:selectItems value="#{bindings.DepartmentId.items}" id="si1"
+                                                   binding="#{backingBeanScope.backing_EmpRegisteration.si1}"/>
+                                    <f:validator binding="#{bindings.DepartmentId.validator}"/>
+                                </af:selectOneChoice>
+                                <af:spacer width="10" height="10" id="s7"
+                                           binding="#{backingBeanScope.backing_EmpRegisteration.s7}"/>
+                                <af:inputText value="#{bindings.AccountId.inputValue}"
+                                              required="#{bindings.AccountId.hints.mandatory}"
+                                              columns="#{bindings.AccountId.hints.displayWidth}"
+                                              maximumLength="#{bindings.AccountId.hints.precision}"
+                                              shortDesc="#{bindings.AccountId.hints.tooltip}" id="it1"
+                                              binding="#{backingBeanScope.backing_EmpRegisteration.it1}"
+                                              disabled="true" visible="false">
+                                    <f:validator binding="#{bindings.AccountId.validator}"/>
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.AccountId.format}"/>
+                                </af:inputText>
+                                <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
+                                           disabled="#{!bindings.Commit.enabled}" id="b2"
+                                           binding="#{backingBeanScope.backing_EmpRegisteration.b2}"
+                                           action="toAppTFCall2"/>
+                            </af:panelFormLayout>
+                        </af:panelGroupLayout>
+                    </af:panelBox>
+                </f:facet>
+                <f:facet name="Header">
+                    <af:outputFormatted id="of2" inlineStyle="font-size:large; font-family:Arial;"
+                                        binding="#{backingBeanScope.backing_EmpRegisteration.of2}"/>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_EmpRegisteration-->
+</f:view>

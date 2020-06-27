@@ -29,6 +29,12 @@
       <managed-bean-scope>backingBean</managed-bean-scope>
       <!--oracle-jdev-comment:managed-bean-jsp-link:1Registration.jsf-->
     </managed-bean>
+    <managed-bean id="__11">
+      <managed-bean-name>backing_EmployeeRegistration</managed-bean-name>
+      <managed-bean-class>view.backing.EmployeeRegistration</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+      <!--oracle-jdev-comment:managed-bean-jsp-link:1EmployeeRegistration.jsf-->
+    </managed-bean>
     <view id="SignIn">
       <page>/SignIn.jsf</page>
     </view>
@@ -47,11 +53,8 @@
         <fixed-outcome>CreateInsert</fixed-outcome>
       </outcome>
     </method-call>
-    <view id="Registration">
-      <page>/Registration.jsf</page>
-    </view>
-    <view id="untitled1">
-      <page>/untitled1.jsf</page>
+    <view id="EmpRegisteration">
+      <page>/EmpRegisteration.jsf</page>
     </view>
     <control-flow-rule id="__1">
       <from-activity-id>SignIn</from-activity-id>
@@ -78,11 +81,12 @@
     <control-flow-rule id="__12">
       <from-activity-id>methodCall1</from-activity-id>
       <control-flow-case id="__13">
-        <to-activity-id>untitled1</to-activity-id>
+        <from-outcome>CreateInsert</from-outcome>
+        <to-activity-id>EmpRegisteration</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__15">
-      <from-activity-id>Registration</from-activity-id>
+      <from-activity-id>EmpRegisteration</from-activity-id>
       <control-flow-case id="__16">
         <from-outcome>toAppTFCall2</from-outcome>
         <to-activity-id>AppTFCall</to-activity-id>

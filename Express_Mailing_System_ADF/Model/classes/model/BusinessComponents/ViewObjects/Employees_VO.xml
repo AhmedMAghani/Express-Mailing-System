@@ -17,6 +17,25 @@
     Name="Departments_VO1"
     ViewObjectName="model.BusinessComponents.ViewObjects.Departments_VO"
     RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_DepartmentId"
+    ListVOName="Departments_VO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    MRUCount="0"
+    NullValueId="LOV_DepartmentId_LOVUIHints_NullValueId">
+    <AttrArray Name="AttrNames">
+      <Item Value="DepartmentId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DepartmentId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="DepartmentName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="Employees_EO"
     Entity="model.BusinessComponents.EntityObjects.Employees_EO"/>
@@ -26,7 +45,8 @@
     PrecisionRule="true"
     EntityAttrName="EmployeeId"
     EntityUsage="Employees_EO"
-    AliasName="EMPLOYEE_ID"/>
+    AliasName="EMPLOYEE_ID"
+    IsUpdateable="while_insert"/>
   <ViewAttribute
     Name="EmployeeName"
     PrecisionRule="true"
@@ -68,7 +88,15 @@
     PrecisionRule="true"
     EntityAttrName="DepartmentId"
     EntityUsage="Employees_EO"
-    AliasName="DEPARTMENT_ID"/>
+    AliasName="DEPARTMENT_ID"
+    LOVName="LOV_DepartmentId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Statue"
     PrecisionRule="true"
@@ -113,4 +141,8 @@
     ViewLink="model.BusinessComponents.ViewLinks.ReturnedEmployeesFk1_VL"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>
