@@ -5,19 +5,19 @@
    <View
       id="View2">
       <property
-         name="activityId">Contracts</property>
+         name="activityId">DashboardHome</property>
       <property
          name="pageFragment">true</property>
       <property
-         name="x">453.5</property>
+         name="x">528.3574</property>
       <property
          name="start">true</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>Contracts&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>DashboardHome&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">281.44824</property>
+         name="y">263.44824</property>
       <property
-         name="page">/Contracts.jsff</property>
+         name="page">/DashboardHome.jsff</property>
       <property
          name="exceptionHandler">false</property>
    </View>

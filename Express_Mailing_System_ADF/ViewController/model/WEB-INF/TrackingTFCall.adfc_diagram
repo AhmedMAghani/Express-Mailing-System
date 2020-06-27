@@ -1,5 +1,75 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <SDM>
    <OverallProperties
-      id="OverallProperties1"/>
+      id="OverallProperties1">
+      <property
+         name="x">88.01758</property>
+      <property
+         name="y">83.5</property>
+   </OverallProperties>
+   <View
+      id="View2">
+      <property
+         name="activityId">StatusPageD</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">155.27295</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>StatusPageD&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">266.5</property>
+      <property
+         name="page">/StatusPageD.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">StatusPageE</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">326.79736</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>StatusPageE&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">258.8506</property>
+      <property
+         name="page">/StatusPageE.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule4">
+      <property
+         name="activityId">*</property>
+      <property
+         name="x">241.03516</property>
+      <property
+         name="y">84.0</property>
+   </WildcardControlFlowRule>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="WildcardControlFlowRule4"
+      to="View2">
+      <property
+         name="fromOutcome">toDeleveryPage</property>
+      <property
+         name="sdm:polyPoints">B43,237.53516,126.649414,155.27295,212.14941,T50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="WildcardControlFlowRule4"
+      to="View3">
+      <property
+         name="fromOutcome">toClientPage</property>
+      <property
+         name="sdm:polyPoints">B57,244.53516,126.649414,326.79736,204.5,T50</property>
+   </ControlFlowCase>
 </SDM>

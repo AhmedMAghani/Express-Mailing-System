@@ -3,39 +3,20 @@
    <OverallProperties
       id="OverallProperties1">
       <property
-         name="x">263.57755</property>
+         name="x">352.78174</property>
       <property
          name="y">91.149414</property>
    </OverallProperties>
-   <View
-      id="View2">
-      <property
-         name="activityId">Home</property>
-      <property
-         name="x">443.09512</property>
-      <property
-         name="start">true</property>
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>Home&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
-      <property
-         name="y">97.74707</property>
-      <property
-         name="page">/Home.jsf</property>
-      <property
-         name="exceptionHandler">false</property>
-      <property
-         name="thumbnailExpanded">false</property>
-   </View>
    <TaskFlowReturn
       id="TaskFlowReturn3">
       <property
          name="activityId">returnToSignIn</property>
       <property
-         name="x">790.9238</property>
+         name="x">298.5</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>returnToSignIn&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  returnToSignIn&lt;/p></property>
       <property
-         name="y">281.79883</property>
+         name="y">101.09766</property>
       <property
          name="finish">true</property>
       <property
@@ -44,119 +25,28 @@
    <ControlFlowCase
       islink="true"
       id="ControlFlowCase4"
-      from="View2"
+      from="View13"
       to="TaskFlowReturn3">
       <property
          name="fromOutcome">toSignIn</property>
       <property
-         name="sdm:polyPoints">R50,484.09512,97.396484,749.9238,281.44824,L50</property>
+         name="sdm:polyPoints">B50,532.2993,152.44824,298.5,154.74707,B50</property>
    </ControlFlowCase>
-   <TaskFlowCall
-      id="TaskFlowCall5">
+   <View
+      id="View13">
       <property
-         name="description">&lt;html>&lt;p>&lt;b>CompaiesTFCall&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+         name="activityId">Home</property>
       <property
-         name="activityId">CompaiesTFCall</property>
+         name="x">532.2993</property>
       <property
-         name="x">443.09512</property>
+         name="start">true</property>
       <property
-         name="y">274.1494</property>
+         name="description">&lt;html>&lt;p>&lt;b>Home&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="documentReference">/WEB-INF/CompaiesTFCall.xml</property>
+         name="y">98.79883</property>
+      <property
+         name="page">/Home.jsf</property>
       <property
          name="exceptionHandler">false</property>
-      <property
-         name="taskFlowId">CompaiesTFCall</property>
-   </TaskFlowCall>
-   <TaskFlowCall
-      id="TaskFlowCall6">
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>AdminstraitveTFCall&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
-      <property
-         name="activityId">AdminstraitveTFCall</property>
-      <property
-         name="x">94.01953</property>
-      <property
-         name="y">274.1494</property>
-      <property
-         name="documentReference">/WEB-INF/AdminstraitveTFCall.xml</property>
-      <property
-         name="exceptionHandler">false</property>
-      <property
-         name="taskFlowId">AdminstraitveTFCall</property>
-   </TaskFlowCall>
-   <TaskFlowCall
-      id="TaskFlowCall7">
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>ContractTFCall&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
-      <property
-         name="activityId">ContractTFCall</property>
-      <property
-         name="x">273.38086</property>
-      <property
-         name="y">274.1494</property>
-      <property
-         name="documentReference">/WEB-INF/ContractTFCall.xml</property>
-      <property
-         name="exceptionHandler">false</property>
-      <property
-         name="taskFlowId">ContractTFCall</property>
-   </TaskFlowCall>
-   <TaskFlowCall
-      id="TaskFlowCall8">
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>TrackingTFCall&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
-      <property
-         name="activityId">TrackingTFCall</property>
-      <property
-         name="x">613.751</property>
-      <property
-         name="y">274.1494</property>
-      <property
-         name="documentReference">/WEB-INF/TrackingTFCall.xml</property>
-      <property
-         name="exceptionHandler">false</property>
-      <property
-         name="taskFlowId">TrackingTFCall</property>
-   </TaskFlowCall>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase9"
-      from="View2"
-      to="TaskFlowCall8">
-      <property
-         name="fromOutcome">toTrackingTFCall</property>
-      <property
-         name="sdm:polyPoints">B56,446.59512,151.39648,572.751,273.79883,L50</property>
-   </ControlFlowCase>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase10"
-      from="View2"
-      to="TaskFlowCall5">
-      <property
-         name="fromOutcome">toCompaniesTFCall</property>
-      <property
-         name="sdm:polyPoints">B44,439.59512,152.96677,443.09512,219.79883,T50</property>
-   </ControlFlowCase>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase11"
-      from="View2"
-      to="TaskFlowCall7">
-      <property
-         name="fromOutcome">toContractTFCall</property>
-      <property
-         name="sdm:polyPoints">L54,402.09512,100.896484,273.38086,219.79883,T50</property>
-   </ControlFlowCase>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase12"
-      from="View2"
-      to="TaskFlowCall6">
-      <property
-         name="fromOutcome">toAdminTFCall</property>
-      <property
-         name="sdm:polyPoints">L46,399.65707,93.896484,135.01953,273.79883,R50</property>
-   </ControlFlowCase>
+   </View>
 </SDM>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
-  <task-flow-definition id="ContractTFCall">
-    <default-activity>Contracts</default-activity>
+  <task-flow-definition id="DashBoardTFCall">
+    <default-activity>DashboardHome</default-activity>
     <data-control-scope>
       <shared/>
     </data-control-scope>
-    <view id="Contracts">
-      <page>/Contracts.jsff</page>
+    <view id="DashboardHome">
+      <page>/DashboardHome.jsff</page>
     </view>
     <use-page-fragments/>
   </task-flow-definition>

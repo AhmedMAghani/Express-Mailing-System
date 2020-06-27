@@ -21,6 +21,7 @@ import oracle.adf.view.rich.component.rich.output.RichSpacer;
 
 public class EmpRegisteration {
     private Integer signUpID;
+    private String userName;
     
     private RichPageTemplate pt1;
     private RichForm f1;
@@ -51,7 +52,11 @@ public class EmpRegisteration {
 
     public EmpRegisteration(){
         signUpID = (Integer) JSFUtils.getFromSession("signUpID");
+        userName = (String) JSFUtils.getFromSession("userName");
         JSFUtils.setExpressionValue("#{bindings.AccountId.inputValue}", new BigDecimal(signUpID));
+        RichOutputFormatted welcome = new RichOutputFormatted();
+        welcome.setValue("Welcome"+userName);
+        setOf2(welcome);
     }
 
     public void setPt1(RichPageTemplate pt1) {

@@ -33,9 +33,9 @@
       <property
          name="activityId">AppTFCall</property>
       <property
-         name="x">345.5625</property>
+         name="x">352.5625</property>
       <property
-         name="y">100.44824</property>
+         name="y">94.09766</property>
       <property
          name="documentReference">/WEB-INF/AppTFCall.xml</property>
       <property
@@ -78,7 +78,7 @@
       <property
          name="fromOutcome">toAppTFCall</property>
       <property
-         name="sdm:polyPoints">R50,132.5,98.44824,304.5625,100.09766,L50</property>
+         name="sdm:polyPoints">R50,132.5,98.44824,311.5625,94.09766,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -146,6 +146,6 @@
       <property
          name="fromOutcome">toAppTFCall2</property>
       <property
-         name="sdm:polyPoints">T50,352.68945,215.74707,345.5625,154.09766,B50</property>
+         name="sdm:polyPoints">T50,352.68945,215.74707,352.5625,148.09766,B50</property>
    </ControlFlowCase>
 </SDM>

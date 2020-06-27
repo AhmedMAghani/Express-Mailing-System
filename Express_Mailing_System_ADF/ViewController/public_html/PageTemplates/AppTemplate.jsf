@@ -31,7 +31,7 @@
             </af:gridCell>
             <af:gridCell width="80%" id="pt_gc2" halign="stretch" valign="stretch"
                          inlineStyle="background-color:white;">
-                <af:panelGroupLayout id="pt_pgl3">
+                <af:panelGroupLayout id="pt_pgl3" halign="end" valign="middle" layout="horizontal">
                         <af:facetRef facetName="Header"/>
                     </af:panelGroupLayout>
             </af:gridCell>
@@ -39,7 +39,7 @@
         <af:gridRow height="90%" id="pt_gr2">
             <af:gridCell width="20%" id="pt_gc3" halign="stretch" valign="stretch"
                          inlineStyle="background-color:#e7e7e7;">
-                <af:panelGroupLayout id="pt_pgl4">
+                <af:panelGroupLayout id="pt_pgl4" valign="top" layout="vertical" inlineStyle="padding:15px;">
                         <af:facetRef facetName="Pages"/>
                     </af:panelGroupLayout>
             </af:gridCell>

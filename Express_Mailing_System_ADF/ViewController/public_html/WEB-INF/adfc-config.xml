@@ -48,4 +48,82 @@
         <managed-bean-scope>backingBean</managed-bean-scope>
         <!--oracle-jdev-comment:managed-bean-jsp-link:1EmpRegisteration.jsf-->
     </managed-bean>
+    <managed-bean id="__3">
+        <managed-bean-name>backing_Home</managed-bean-name>
+        <managed-bean-class>view.backing.Home11</managed-bean-class>
+        <managed-bean-scope>backingBean</managed-bean-scope>
+        <!--oracle-jdev-comment:managed-bean-jsp-link:1Home.jsf-->
+    </managed-bean>
+    <managed-bean id="__9">
+        <managed-bean-name>backing_DashboardHome</managed-bean-name>
+        <managed-bean-class>view.backing.DashboardHome</managed-bean-class>
+        <managed-bean-scope>backingBean</managed-bean-scope>
+        <!--oracle-jdev-comment:managed-bean-jsp-link:1DashboardHome.jsff-->
+    </managed-bean>
+    <managed-bean id="__10">
+        <managed-bean-name>backing_Home2</managed-bean-name>
+        <managed-bean-class>view.backing.Home</managed-bean-class>
+        <managed-bean-scope>backingBean</managed-bean-scope>
+        <!--oracle-jdev-comment:managed-bean-jsp-link:1Home.jsf-->
+    </managed-bean>
+    <managed-bean id="__11">
+        <managed-bean-name>backing_CompaniesDetails</managed-bean-name>
+        <managed-bean-class>view.backing.CompaniesDetails</managed-bean-class>
+        <managed-bean-scope>backingBean</managed-bean-scope>
+        <!--oracle-jdev-comment:managed-bean-jsp-link:1CompaniesDetails.jsff-->
+    </managed-bean>
+    <managed-bean id="__12">
+        <managed-bean-name>backing_BranchsDetails</managed-bean-name>
+        <managed-bean-class>view.backing.BranchsDetails</managed-bean-class>
+        <managed-bean-scope>backingBean</managed-bean-scope>
+        <!--oracle-jdev-comment:managed-bean-jsp-link:1BranchsDetails.jsff-->
+    </managed-bean>
+    <managed-bean id="__13">
+        <managed-bean-name>backing_Zone</managed-bean-name>
+        <managed-bean-class>view.backing.Zone</managed-bean-class>
+        <managed-bean-scope>backingBean</managed-bean-scope>
+        <!--oracle-jdev-comment:managed-bean-jsp-link:1Zone.jsff-->
+    </managed-bean>
+    <managed-bean id="__14">
+        <managed-bean-name>backing_ZonePayment</managed-bean-name>
+        <managed-bean-class>view.backing.ZonePayment</managed-bean-class>
+        <managed-bean-scope>backingBean</managed-bean-scope>
+        <!--oracle-jdev-comment:managed-bean-jsp-link:1ZonePayment.jsff-->
+    </managed-bean>
+    <managed-bean id="__15">
+        <managed-bean-name>backing_SystemUser</managed-bean-name>
+        <managed-bean-class>view.backing.SystemUser</managed-bean-class>
+        <managed-bean-scope>backingBean</managed-bean-scope>
+        <!--oracle-jdev-comment:managed-bean-jsp-link:1SystemUser.jsff-->
+    </managed-bean>
+    <managed-bean id="__16">
+        <managed-bean-name>backing_Employees</managed-bean-name>
+        <managed-bean-class>view.backing.Employees</managed-bean-class>
+        <managed-bean-scope>backingBean</managed-bean-scope>
+        <!--oracle-jdev-comment:managed-bean-jsp-link:1Employees.jsff-->
+    </managed-bean>
+    <managed-bean id="__17">
+        <managed-bean-name>backing_Department</managed-bean-name>
+        <managed-bean-class>view.backing.Department</managed-bean-class>
+        <managed-bean-scope>backingBean</managed-bean-scope>
+        <!--oracle-jdev-comment:managed-bean-jsp-link:1Department.jsff-->
+    </managed-bean>
+    <managed-bean id="__18">
+        <managed-bean-name>backing_Contracts</managed-bean-name>
+        <managed-bean-class>view.backing.Contracts</managed-bean-class>
+        <managed-bean-scope>backingBean</managed-bean-scope>
+        <!--oracle-jdev-comment:managed-bean-jsp-link:1Contracts.jsff-->
+    </managed-bean>
+    <managed-bean id="__19">
+        <managed-bean-name>backing_StatusPageD</managed-bean-name>
+        <managed-bean-class>view.backing.StatusPageD</managed-bean-class>
+        <managed-bean-scope>backingBean</managed-bean-scope>
+        <!--oracle-jdev-comment:managed-bean-jsp-link:1StatusPageD.jsff-->
+    </managed-bean>
+    <managed-bean id="__20">
+        <managed-bean-name>backing_StatusPageE</managed-bean-name>
+        <managed-bean-class>view.backing.StatusPageE</managed-bean-class>
+        <managed-bean-scope>backingBean</managed-bean-scope>
+        <!--oracle-jdev-comment:managed-bean-jsp-link:1StatusPageE.jsff-->
+    </managed-bean>
 </adfc-config>

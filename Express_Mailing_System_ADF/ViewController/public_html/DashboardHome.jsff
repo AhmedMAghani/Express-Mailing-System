@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:pageTemplate viewId="/PageTemplates/FragmentTemplate.jsf" id="pt1"
+                     binding="#{backingBeanScope.backing_DashboardHome.pt1}">
+        <f:facet name="NavBar"/>
+        <f:facet name="Content">
+            <af:panelDashboard id="pd1" binding="#{backingBeanScope.backing_DashboardHome.pd1}" columns="2"
+                               inlineStyle="Height:100%">
+                <af:panelBox text="PanelBox1" id="pb1" binding="#{backingBeanScope.backing_DashboardHome.pb1}"
+                             showDisclosure="false" titleHalign="center">
+                    <f:facet name="toolbar"/>
+                </af:panelBox>
+                <af:panelBox text="PanelBox2" id="pb2" binding="#{backingBeanScope.backing_DashboardHome.pb2}"
+                             showDisclosure="false" titleHalign="center">
+                    <f:facet name="toolbar"/>
+                </af:panelBox>
+                <af:panelBox text="PanelBox3" id="pb3" binding="#{backingBeanScope.backing_DashboardHome.pb3}"
+                             showDisclosure="false" titleHalign="center">
+                    <f:facet name="toolbar"/>
+                </af:panelBox>
+                <af:panelBox text="PanelBox4" id="pb4" binding="#{backingBeanScope.backing_DashboardHome.pb4}"
+                             showDisclosure="false" titleHalign="center">
+                    <f:facet name="toolbar"/>
+                </af:panelBox>
+            </af:panelDashboard>
+        </f:facet>
+    </af:pageTemplate>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_DashboardHome-->
+</ui:composition>

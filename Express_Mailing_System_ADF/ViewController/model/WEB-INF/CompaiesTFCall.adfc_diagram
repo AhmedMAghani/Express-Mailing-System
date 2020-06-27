@@ -1,5 +1,75 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <SDM>
    <OverallProperties
-      id="OverallProperties1"/>
+      id="OverallProperties1">
+      <property
+         name="x">88.01758</property>
+      <property
+         name="y">83.5</property>
+   </OverallProperties>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule2">
+      <property
+         name="activityId">*</property>
+      <property
+         name="x">241.03516</property>
+      <property
+         name="y">84.0</property>
+   </WildcardControlFlowRule>
+   <View
+      id="View3">
+      <property
+         name="activityId">CompaniesDetails</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">329.46045</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>CompaniesDetails&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">266.5</property>
+      <property
+         name="page">/CompaniesDetails.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <View
+      id="View4">
+      <property
+         name="activityId">BranchsDetails</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">152.60986</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>BranchsDetails&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">258.8506</property>
+      <property
+         name="page">/BranchsDetails.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="WildcardControlFlowRule2"
+      to="View3">
+      <property
+         name="fromOutcome">toCompanies</property>
+      <property
+         name="sdm:polyPoints">B57,244.53516,126.649414,329.46045,212.14941,T50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="WildcardControlFlowRule2"
+      to="View4">
+      <property
+         name="fromOutcome">toBranchs</property>
+      <property
+         name="sdm:polyPoints">B43,237.53516,126.649414,152.60986,204.5,T50</property>
+   </ControlFlowCase>
 </SDM>

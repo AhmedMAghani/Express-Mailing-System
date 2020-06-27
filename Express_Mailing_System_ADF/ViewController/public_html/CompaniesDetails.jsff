@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:pageTemplate viewId="/PageTemplates/FragmentTemplate.jsf" id="pt1"
+                     binding="#{backingBeanScope.backing_CompaniesDetails.pt1}">
+        <f:facet name="NavBar"/>
+        <f:facet name="Content"/>
+    </af:pageTemplate>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_CompaniesDetails-->
+</ui:composition>

@@ -7,69 +7,34 @@
     </data-control-scope>
     <managed-bean id="__7">
       <managed-bean-name>backing_Home</managed-bean-name>
-      <managed-bean-class>view.backing.Home</managed-bean-class>
+      <managed-bean-class>view.backing.Home11</managed-bean-class>
       <managed-bean-scope>backingBean</managed-bean-scope>
       <!--oracle-jdev-comment:managed-bean-jsp-link:1Pages/Home.jsf-->
     </managed-bean>
     <managed-bean id="__8">
       <managed-bean-name>backing_Home1</managed-bean-name>
-      <managed-bean-class>view.backing.Home</managed-bean-class>
+      <managed-bean-class>view.backing.Home11</managed-bean-class>
       <managed-bean-scope>backingBean</managed-bean-scope>
       <!--oracle-jdev-comment:managed-bean-jsp-link:1Home.jsf-->
     </managed-bean>
-    <view id="Home">
-      <page>/Home.jsf</page>
-    </view>
+    <managed-bean id="__15">
+      <managed-bean-name>DynamicRegion</managed-bean-name>
+      <managed-bean-class>view.DynamicRegion</managed-bean-class>
+      <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
     <task-flow-return id="returnToSignIn">
       <outcome>
         <name>returnToSignIn</name>
       </outcome>
     </task-flow-return>
-    <task-flow-call id="CompaiesTFCall">
-      <task-flow-reference>
-        <document>/WEB-INF/CompaiesTFCall.xml</document>
-        <id>CompaiesTFCall</id>
-      </task-flow-reference>
-    </task-flow-call>
-    <task-flow-call id="AdminstraitveTFCall">
-      <task-flow-reference>
-        <document>/WEB-INF/AdminstraitveTFCall.xml</document>
-        <id>AdminstraitveTFCall</id>
-      </task-flow-reference>
-    </task-flow-call>
-    <task-flow-call id="ContractTFCall">
-      <task-flow-reference>
-        <document>/WEB-INF/ContractTFCall.xml</document>
-        <id>ContractTFCall</id>
-      </task-flow-reference>
-    </task-flow-call>
-    <task-flow-call id="TrackingTFCall">
-      <task-flow-reference>
-        <document>/WEB-INF/TrackingTFCall.xml</document>
-        <id>TrackingTFCall</id>
-      </task-flow-reference>
-    </task-flow-call>
-    <control-flow-rule id="__1">
+    <view id="Home">
+      <page>/Home.jsf</page>
+    </view>
+    <control-flow-rule id="__6">
       <from-activity-id>Home</from-activity-id>
-      <control-flow-case id="__2">
+      <control-flow-case id="__13">
         <from-outcome>toSignIn</from-outcome>
         <to-activity-id>returnToSignIn</to-activity-id>
-      </control-flow-case>
-      <control-flow-case id="__3">
-        <from-outcome>toTrackingTFCall</from-outcome>
-        <to-activity-id>TrackingTFCall</to-activity-id>
-      </control-flow-case>
-      <control-flow-case id="__4">
-        <from-outcome>toCompaniesTFCall</from-outcome>
-        <to-activity-id>CompaiesTFCall</to-activity-id>
-      </control-flow-case>
-      <control-flow-case id="__5">
-        <from-outcome>toContractTFCall</from-outcome>
-        <to-activity-id>ContractTFCall</to-activity-id>
-      </control-flow-case>
-      <control-flow-case id="__6">
-        <from-outcome>toAdminTFCall</from-outcome>
-        <to-activity-id>AdminstraitveTFCall</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
   </task-flow-definition>

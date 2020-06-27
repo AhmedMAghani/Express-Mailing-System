@@ -1,8 +1,48 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
   <task-flow-definition id="AdminstraitveTFCall">
+    <default-activity>SystemUser</default-activity>
     <data-control-scope>
       <shared/>
     </data-control-scope>
+    <view id="Department">
+      <page>/Department.jsff</page>
+    </view>
+    <view id="Employees">
+      <page>/Employees.jsff</page>
+    </view>
+    <view id="SystemUser">
+      <page>/SystemUser.jsff</page>
+    </view>
+    <view id="Zone">
+      <page>/Zone.jsff</page>
+    </view>
+    <view id="ZonePayment">
+      <page>/ZonePayment.jsff</page>
+    </view>
+    <control-flow-rule id="__1">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>toDepartments</from-outcome>
+        <to-activity-id>Department</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>toEmployees</from-outcome>
+        <to-activity-id>Employees</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__4">
+        <from-outcome>toSystemUser</from-outcome>
+        <to-activity-id>SystemUser</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__5">
+        <from-outcome>toZone</from-outcome>
+        <to-activity-id>Zone</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__6">
+        <from-outcome>toZonePayment</from-outcome>
+        <to-activity-id>ZonePayment</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
   </task-flow-definition>
 </adfc-config>

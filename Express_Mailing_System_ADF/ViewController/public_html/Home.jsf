@@ -1,15 +1,34 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
-    <af:document title="Home.jsf" id="d1" binding="#{backingBeanScope.backing_Home1.d1}">
-        <af:form id="f1" binding="#{backingBeanScope.backing_Home1.f1}">
+    <af:document title="Home.jsf" id="d1" binding="#{backingBeanScope.backing_Home2.d1}">
+        <af:form id="f1" binding="#{backingBeanScope.backing_Home2.f1}">
             <af:pageTemplate viewId="/PageTemplates/AppTemplate.jsf" id="pt1"
-                             binding="#{backingBeanScope.backing_Home1.pt1}">
-                <f:facet name="Pages"/>
-                <f:facet name="Content"/>
-                <f:facet name="Header"/>
+                             binding="#{backingBeanScope.backing_Home2.pt1}">
+                <f:facet name="Pages">
+                    <af:link text="DashBoardTFCall" action="#{viewScope.DynamicRegion.dashBoardTFCall}" id="l1"
+                             binding="#{backingBeanScope.backing_Home2.l1}"/>
+                    <af:link text="CompaiesTFCall" action="#{viewScope.DynamicRegion.compaiesTFCall}" id="l2"
+                             binding="#{backingBeanScope.backing_Home2.l2}"/>
+                    <af:link text="ContractTFCall" action="#{viewScope.DynamicRegion.contractTFCall}" id="l3"
+                             binding="#{backingBeanScope.backing_Home2.l3}"/>
+                    <af:link text="TrackingTFCall" action="#{viewScope.DynamicRegion.trackingTFCall}" id="l4"
+                             binding="#{backingBeanScope.backing_Home2.l4}"/>
+                    <af:link text="AdminstraitveTFCall" action="#{viewScope.DynamicRegion.adminstraitveTFCall}"
+                             id="l5" binding="#{backingBeanScope.backing_Home2.l5}"/>
+                </f:facet>
+                <f:facet name="Content">
+                    <af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1"
+                               binding="#{backingBeanScope.backing_Home2.r1}"
+                               partialTriggers="::l1 ::l2 ::l3 ::l4 ::l5"/>
+                </f:facet>
+                <f:facet name="Header">
+                    <af:outputFormatted id="of1"
+                                        inlineStyle="font-size:large; font-family:Arial; color:#ff9c31; line-height:50%;"
+                                        binding="#{backingBeanScope.backing_Home2.of1}"/>
+                </f:facet>
             </af:pageTemplate>
         </af:form>
     </af:document>
-    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_Home1-->
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_Home2-->
 </f:view>
